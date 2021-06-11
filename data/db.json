@@ -1,0 +1,28 @@
+{
+    "coupons": [
+        {
+            "code": "OFR001",
+            "discountPercentage": 10,
+            "minimumDistanceInKm": 0,
+            "maximunDistanceInKm": 200,
+            "minimumWeightInKg": 70,
+            "maxWeightInKg": 200
+        },
+        {
+            "code": "OFR002",
+            "discountPercentage": 7,
+            "minimumDistanceInKm": 50,
+            "maximunDistanceInKm": 150,
+            "minimumWeightInKg": 100,
+            "maxWeightInKg": 250
+        },
+        {
+            "code": "OFR003",
+            "discountPercentage": 5,
+            "minimumDistanceInKm": 50,
+            "maximunDistanceInKm": 250,
+            "minimumWeightInKg": 10,
+            "maxWeightInKg": 150
+        }
+    ]
+}
