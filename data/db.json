@@ -1,4 +1,8 @@
 {
+    "settings": {
+        "costPerKg": 0,
+        "costPerKm": 0
+    },
     "coupons": [
         {
             "code": "OFR001",
