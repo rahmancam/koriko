@@ -1,4 +1,4 @@
-import InvalidConfigurationError from '../lib/models/errors/invalid-configuration-error'
+import InvalidConfigurationError from '../lib/errors/invalid-configuration-error'
 
 export default function makeCourierDb ({ makeDb }) {
   return Object.freeze({

@@ -1,7 +1,7 @@
 {
     "settings": {
-        "costPerKg": 0,
-        "costPerKm": 0
+        "costPerKg": 10,
+        "costPerKm": 5
     },
     "coupons": [
         {

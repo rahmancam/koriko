@@ -1,4 +1,4 @@
-import InvalidConfigurationError from '../lib/models/errors/invalid-configuration-error'
+import InvalidConfigurationError from '../lib/errors/invalid-configuration-error'
 import makeCourierDb from './courier-db'
 
 describe('Courier DB', () => {
