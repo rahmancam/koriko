@@ -15,12 +15,15 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "jest": "^27.0.4",
+    "jsdoc": "^3.6.7",
+    "minami": "^1.2.3",
     "standard": "^16.0.3"
   },
   "scripts": {
     "start": "babel-node app/index.js",
     "test": "jest",
-    "lint": "eslint lib/**/*.js app/**/*.js"
+    "lint": "eslint lib/**/*.js app/**/*.js",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "standard": {
     "env": [
