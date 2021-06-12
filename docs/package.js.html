@@ -58,12 +58,12 @@ class Package {
      * Package Weight in Kg
      * @type {number}
      */
-    weightInKg = 0;
+    weightKg = 0;
     /**
      * Package delivery distance in Km
      * @type {number}
      */
-    distanceInKm = 0;
+    distanceKm = 0;
     /**
      * Coupon code
      * @type {string}
@@ -90,10 +90,10 @@ class Package {
      */
     totalCost = 0;
 
-    constructor ({ id, weightInKg, distanceInKm, offerCode }) {
+    constructor ({ id, weightKg, distanceKm, offerCode }) {
       this.id = id
-      this.weightInKg = weightInKg
-      this.distanceInKm = distanceInKm
+      this.weightKg = weightKg
+      this.distanceKm = distanceKm
       this.offerCode = offerCode
     }
 }
@@ -102,14 +102,14 @@ class Package {
  * Factory function to make new package instance
  * @function
  * @param {string} id - Package id
- * @param {number} weightInKg - weight in Kg
- * @param {number} distanceInKm - distance in km
+ * @param {number} weightKg - weight in Kg
+ * @param {number} distanceKm - distance in km
  * @param {string} offerCode - offer code
  * @return {Package} The new package instance
  */
-export function makePackage ({ id, weightInKg, distanceInKm, offerCode }) {
-  validatePackageOrThrowError({ id, weightInKg, distanceInKm, offerCode })
-  return new Package({ id, weightInKg, distanceInKm, offerCode })
+export function makePackage ({ id, weightKg, distanceKm, offerCode }) {
+  validatePackageOrThrowError({ id, weightKg, distanceKm, offerCode })
+  return new Package({ id, weightKg, distanceKm, offerCode })
 }
 
 export function getPackageWithCost (packageItem, cost) {

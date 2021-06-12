@@ -7,26 +7,26 @@
         {
             "code": "OFR001",
             "discountPercentage": 10,
-            "minDistanceInKm": 0,
-            "maxDistanceInKm": 200,
-            "minWeightInKg": 70,
-            "maxWeightInKg": 200
+            "minDistanceKm": 0,
+            "maxDistanceKm": 200,
+            "minWeightKg": 70,
+            "maxWeightKg": 200
         },
         {
             "code": "OFR002",
             "discountPercentage": 7,
-            "minDistanceInKm": 50,
-            "maxDistanceInKm": 150,
-            "minWeightInKg": 100,
-            "maxWeightInKg": 250
+            "minDistanceKm": 50,
+            "maxDistanceKm": 150,
+            "minWeightKg": 100,
+            "maxWeightKg": 250
         },
         {
             "code": "OFR003",
             "discountPercentage": 5,
-            "minDistanceInKm": 50,
-            "maxDistanceInKm": 250,
-            "minWeightInKg": 10,
-            "maxWeightInKg": 150
+            "minDistanceKm": 50,
+            "maxDistanceKm": 250,
+            "minWeightKg": 10,
+            "maxWeightKg": 150
         }
     ]
 }
