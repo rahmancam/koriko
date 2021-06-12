@@ -4,6 +4,6 @@ import ReactDOM from 'react-dom'
 
 console.log(courierDB.findAllCoupons())
 
-const Hello = () => (<div>Hello World</div>)
+const Hello = () => (<div>This application rocks!!</div>)
 
 ReactDOM.render(<Hello />, document.getElementById('root'))
