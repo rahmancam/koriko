@@ -3,6 +3,11 @@
   "version": "0.0.1",
   "description": "Koriko is a small distance courier service app to deliver packages.",
   "main": "./app/index.js",
+  "dependencies": {
+    "uuidv4": "^6.2.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/eslint-parser": "^7.14.5",
@@ -20,8 +25,6 @@
     "jsdoc": "^3.6.7",
     "minami": "^1.2.3",
     "parcel-bundler": "1.12.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "standard": "^16.0.3"
   },
   "scripts": {
