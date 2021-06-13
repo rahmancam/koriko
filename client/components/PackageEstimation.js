@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import React from 'react'
+import { sortPackagesByEstimateDeliveryTime } from '../../app/utils'
 
 /**
  * Package Estimation component
@@ -9,8 +10,7 @@ import React from 'react'
  */
 export default function PackageEstimation ({ isTimeEstimation = false, packages = [] }) {
   if (isTimeEstimation) {
-    packages = [...packages]
-    packages.sort((item1, item2) => item1.deliveryEstimateTimeHrs - item2.deliveryEstimateTimeHrs)
+    packages = sortPackagesByEstimateDeliveryTime(packages)
   }
 
   return (

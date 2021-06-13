@@ -6,14 +6,14 @@ import { makePackage } from '../../lib/models/package'
  * @param {string} text
  * @returns {number} base cost
  */
-const getBaseCost = (text) => parseFloat(text.split(' ')[0])
+const getBaseCost = (text) => parseFloat(text.trim().split(' ')[0])
 
 /**
  * Get Total Package count
  * @param {string} text
  * @returns {number} total package count
  */
-const getTotalPackageCount = (text) => parseInt(text.split(' ')[1])
+const getTotalPackageCount = (text) => parseInt(text.trim().split(' ')[1])
 
 /**
  * Get Package detail
@@ -21,7 +21,7 @@ const getTotalPackageCount = (text) => parseInt(text.split(' ')[1])
  * @returns {Package} package deail
  */
 const getPackage = (text) => {
-  const splitsText = text.split(' ')
+  const splitsText = text.trim().split(' ')
   return {
     id: splitsText[0],
     weightKg: parseInt(splitsText[1]),
@@ -36,7 +36,7 @@ const getPackage = (text) => {
  * @returns {Fleet}
  */
 const getFleet = (text) => {
-  const splitsText = text.split(' ')
+  const splitsText = text.trim().split(' ')
   return {
     numberOfVehicles: parseInt(splitsText[0]),
     maxSpeedKmPerHr: parseInt(splitsText[1]),

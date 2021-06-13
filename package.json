@@ -32,6 +32,7 @@
   "scripts": {
     "start": "babel-node app/index.js",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "lint": "eslint lib/**/*.js app/**/*.js",
     "doc": "jsdoc -c jsdoc.json",
     "web:dev": "parcel client/index.html",
