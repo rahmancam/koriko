@@ -1,14 +1,25 @@
-import courierDb from '../db'
+import { makeFleet } from '../../lib/models/fleet'
+import { makePackage } from '../../lib/models/package'
 
-import { makeDeliveryEstimator } from '../lib'
-import { makePackage } from '../lib/models/package'
-import { makeFleet } from '../lib/models/fleet'
-
-const coupons = courierDb.findAllCoupons()
-const settings = courierDb.findAllSettings()
-
+/**
+ * Get Base cost
+ * @param {string} text
+ * @returns {number} base cost
+ */
 const getBaseCost = (text) => parseFloat(text.split(' ')[0])
+
+/**
+ * Get Total Package count
+ * @param {string} text
+ * @returns {number} total package count
+ */
 const getTotalPackageCount = (text) => parseInt(text.split(' ')[1])
+
+/**
+ * Get Package detail
+ * @param {string} text
+ * @returns {Package} package deail
+ */
 const getPackage = (text) => {
   const splitsText = text.split(' ')
   return {
@@ -19,6 +30,11 @@ const getPackage = (text) => {
   }
 }
 
+/**
+ * Get Fleet deails
+ * @param {string} text
+ * @returns {Fleet}
+ */
 const getFleet = (text) => {
   const splitsText = text.split(' ')
   return {
@@ -28,26 +44,12 @@ const getFleet = (text) => {
   }
 }
 
-function handleEstimation (inputText, onCostEstimation = () => {}, onTimeEstimation = () => {}) {
-  const { baseCost, packages, fleetDetail } = getParseInput(inputText)
-
-  const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
-  if (fleetDetail) {
-    const shipments = estimator.estimateTime(packages, fleetDetail)
-    return onTimeEstimation(shipments)
-  }
-  const packagesWithCost = estimator.estimateCost(packages)
-  return onCostEstimation(packagesWithCost)
-}
-
-export function getAllPackagesFromShipments (shipments) {
-  return shipments.reduce((acc, shipment) => acc.concat(shipment.packages), [])
-}
-
 /**
- * Parse Input and returns Package, Fleet and Basecost
+ * Get Parse input
+ * @param {string} inputText
+ * @returns {Object} baseCost, Packages & Fleet
  */
-function getParseInput (inputText) {
+export function getParseInput (inputText) {
   if (!inputText || inputText.trim().length === 0) {
     throw new Error('Invalid input, please provide package details')
   }
@@ -95,8 +97,4 @@ function getParseInput (inputText) {
     packages,
     fleetDetail
   }
-}
-
-export {
-  handleEstimation
 }

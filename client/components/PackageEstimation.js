@@ -2,6 +2,11 @@
 /* eslint-disable react/jsx-key */
 import React from 'react'
 
+/**
+ * Package Estimation component
+ * @param {Object} props
+ * @returns {Object}
+ */
 export default function PackageEstimation ({ isTimeEstimation = false, packages = [] }) {
   if (isTimeEstimation) {
     packages = [...packages]

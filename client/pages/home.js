@@ -1,8 +1,12 @@
 import React, { useRef, useState } from 'react'
-import { getAllPackagesFromShipments, handleEstimation } from '../api'
+import { getAllPackagesFromShipments, handleEstimation } from '../../app/helpers/api-handler'
 import NavBar from '../components/Navbar'
 import PackageEstimation from '../components/PackageEstimation'
 
+/**
+ * Home page
+ * @returns {Object}
+ */
 export default function Home () {
   const inputFormat = []
   inputFormat.push('***Input Format***')
@@ -18,24 +22,38 @@ export default function Home () {
   const [isTimeEstimation, setIsTimeEstimation] = useState(false)
   const [packages, setPackages] = useState(null)
 
+  /**
+   * Reset page to default state
+   */
   const resetDefaults = () => {
     setPackages(null)
     setError(false)
     setErrorMessage('')
   }
 
+  /**
+   * Callback to handle cost estimation
+   * @param {Array<Package>} packages
+   */
   const onCostEstimation = (packages) => {
     setIsTimeEstimation(false)
     setPackages(packages)
   }
 
+  /**
+   * Callback to handle time estimation
+   * @param {Array<Shipment>} shipments
+   */
   const onTimeEstimation = (shipments) => {
     setIsTimeEstimation(true)
     const packages = getAllPackagesFromShipments(shipments)
-    console.log(packages)
     setPackages(packages)
   }
 
+  /**
+   * Submit to get the estimation
+   * @param {Event} e
+   */
   const onSubmit = (e) => {
     resetDefaults()
     try {
@@ -46,6 +64,10 @@ export default function Home () {
     }
   }
 
+  /**
+   * Load UseCase 1 and 2 problems
+   * @param {number} problemId
+   */
   const loadProblem = (problemId) => {
     resetDefaults()
     let text = ''
@@ -93,6 +115,11 @@ export default function Home () {
             }
           </div>
         </div>
+      </div>
+      <div className='git-project'>
+        <a href='https://github.com/rahmancam/koriko' target='_blank' rel='noreferrer'>
+          <img src='https://img.shields.io/github/stars/rahmancam/koriko?style=social' alt='Github' />
+        </a>
       </div>
     </div>
   )

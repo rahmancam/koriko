@@ -1,5 +1,9 @@
 import React from 'react'
 
+/**
+ * NavBar component
+ * @returns {Object}
+ */
 export default function NavBar () {
   return (
     <div>
