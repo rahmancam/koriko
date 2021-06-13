@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Koriko Documentation models/shipment.js</title>
+  <title>Koriko Documentation core/fleet-priority-queue.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -96,7 +96,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>models/shipment.js</h1>
+                    <h1>core/fleet-priority-queue.js</h1>
                 </header>
                 
 
@@ -105,47 +105,82 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** @module Shipment */
+            <pre class="prettyprint source linenums"><code>/** @module Fleet */
 
-import validateShipmentOrThrowError from '../helpers/validate-shipment'
-import { v4 as uuid } from 'uuid'
+import { makeVehicle } from '../models/vehicle'
+
 /**
- * Shipment class to hold shipment information
+ * Fleet Priority Queue
  */
-class Shipment {
-    /**
-     * @property {string} Shipment Id
-     */
-    id = `${uuid()}`
-    /**
-     * @property {Array&lt;Package>} packages
-     */
-    packages = null
+class FleetPriorityQueue {
+  /**
+   * @property {Array&lt;Vehicle>} vehicles
+   */
+  vehicles = [];
+  constructor ({ vehicles }) {
+    this.vehicles = vehicles
+  }
 
-    constructor ({ packages }) {
-      this.packages = packages
+  /**
+   * Enqueue vechicle based on available time hours
+   * @param {Vehicle} vehicle
+   */
+  enqueue (vehicle) {
+    let contains = false
+    for (let index = 0; index &lt; this.vehicles.length; index++) {
+      if (this.vehicles[index].availableTimeHrs > vehicle.availableTimeHrs) {
+        this.vehicles.splice(index, 0, vehicle)
+        contains = true
+        break
+      }
     }
 
-    /**
-     * Get shipmetn weight
-     * @returns {number} Total shipment weight
-     */
-    getWeightkg () {
-      return this.packages?.reduce((acc, item) => acc + item.weightKg, 0)
+    if (!contains) {
+      this.vehicles.push(vehicle)
     }
+  }
+
+  /**
+   * Dequeue vehicles which is available first
+   * @returns {Vehicle}
+   */
+  dequeue () {
+    if (this.isEmpty()) {
+      return null
+    }
+    return this.vehicles.shift()
+  }
+
+  /**
+   * Get the size of queue
+   * @returns {number}
+   */
+  size () {
+    return this.vehicles?.length
+  }
+
+  /**
+   * Check if queue if empty
+   * @returns {boolean}
+   */
+  isEmpty () {
+    return this.vehicles.length === 0
+  }
 }
 
 /**
- * Factory function to make a new shipment
- * @param {ShipmentOptions} options shipment options
- * @returns {Shipment}
+ * Factory function to create fleet priority queue
+ * @param {FleetPriorityQueueOptions} options
+ * @returns {FleetPriorityQueue} fleet priority queue
  */
-export function makeShipment ({ packages }) {
-  validateShipmentOrThrowError({ packages })
-  return new Shipment({ packages })
+export function makeFleetPriorityQueue ({ numberOfVehicles }) {
+  const vehicles = Array(numberOfVehicles)
+    .fill(0)
+    .map((_, index) => makeVehicle({ id: index + 1 }))
+  return new FleetPriorityQueue({ vehicles })
 }
 
-export default Shipment
+export default FleetPriorityQueue
 </code></pre>
         </article>
     </section>

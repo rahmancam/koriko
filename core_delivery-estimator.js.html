@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Koriko Documentation models/shipment.js</title>
+  <title>Koriko Documentation core/delivery-estimator.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -96,7 +96,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>models/shipment.js</h1>
+                    <h1>core/delivery-estimator.js</h1>
                 </header>
                 
 
@@ -105,47 +105,59 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** @module Shipment */
+            <pre class="prettyprint source linenums"><code>/** @module Estimator */
 
-import validateShipmentOrThrowError from '../helpers/validate-shipment'
-import { v4 as uuid } from 'uuid'
-/**
- * Shipment class to hold shipment information
- */
-class Shipment {
-    /**
-     * @property {string} Shipment Id
-     */
-    id = `${uuid()}`
-    /**
-     * @property {Array&lt;Package>} packages
-     */
-    packages = null
-
-    constructor ({ packages }) {
-      this.packages = packages
-    }
-
-    /**
-     * Get shipmetn weight
-     * @returns {number} Total shipment weight
-     */
-    getWeightkg () {
-      return this.packages?.reduce((acc, item) => acc + item.weightKg, 0)
-    }
-}
+import baseEstimatorWithCoupon from './cost-estimator-with-coupon'
+import maximizeByNumberOfPackage from './maximize-by-package'
+import baseShipmentEstimator from './shipment-estimator'
 
 /**
- * Factory function to make a new shipment
- * @param {ShipmentOptions} options shipment options
- * @returns {Shipment}
+ * Factory function to make a new estimator
+ * @param {EstimatorOptions} options estimator options
+ * @returns {EstimatorAPI} API to estimate cost
  */
-export function makeShipment ({ packages }) {
-  validateShipmentOrThrowError({ packages })
-  return new Shipment({ packages })
+function makeDeliveryEstimator ({ baseCost, coupons, settings }) {
+  /**
+   * Estimate cost
+   * @param {Array&lt;Package>} packages packages to estimate
+   * @param {Function} estimator override function to estimate
+   * @returns {Array&lt;Package>} packages with estimation
+   */
+  function estimateCost (packages, estimator = baseEstimatorWithCoupon) {
+    if (!packages || !Array.isArray(packages)) {
+      throw new TypeError('no valid packages provided to estimate the cost')
+    }
+
+    if (!estimator || typeof estimator !== 'function') {
+      throw new TypeError('no estimator provided to estimate the cost')
+    }
+    return packages.map(packageItem => estimator({ baseCost, packageItem, coupons, settings }))
+  }
+
+  /**
+   * Estimate delivery time with cost
+   * @param {Array&lt;Package>} packages Packages to estimate
+   * @param {FleetOptions} fleetDetail Fleet detail for shipment
+   * @param {Function} [costEstimator] override cost estimator (optional)
+   * @param {Function} [timeEstimator] override time estimator (optional)
+   * @param {Function} [maximizeBy] override maximize by strategy (optional)
+   * @returns {Array&lt;Shipment>} shipment details with estimated delivery time
+   */
+  function estimateTime (packages, fleetDetail,
+    costEstimator = baseEstimatorWithCoupon,
+    timeEstimator = baseShipmentEstimator,
+    maximizeBy = maximizeByNumberOfPackage) {
+    const packagesWithCost = estimateCost(packages, costEstimator)
+    return timeEstimator(packagesWithCost, fleetDetail, maximizeBy)
+  }
+
+  return {
+    estimateCost,
+    estimateTime
+  }
 }
 
-export default Shipment
+export default makeDeliveryEstimator
 </code></pre>
         </article>
     </section>

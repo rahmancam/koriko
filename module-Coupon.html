@@ -1,53 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
-    <meta charset="utf-8">
-    <title>Coupon - Korio</title>
-    
-    <meta name="description" content="A courier service library" />
-    
-        <meta name="keywords" content="courier" />
-        <meta name="keyword" content="courier" />
-    
-    
-    
-    <meta property="og:title" content="Korio"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content=""/>
-    <meta property="og:site_name" content="Koriko"/>
-    <meta property="og:url" content=""/>
-    
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
-    <script src="scripts/nav.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koriko Documentation Coupon</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
 </head>
-<body>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
 
-<label for="nav-trigger" class="overlay"></label>
 
-<nav >
-    
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/rahmancam/koriko" target="_blank" class="menu-item" id="website_link" >Project Website</a></h2><h2><a href="https://koriko.netlify.app" target="_blank" class="menu-item" id="website_link" >Live Demo</a></h2><h3>Classes</h3><ul><li><a href="module-Fleet-Fleet.html">Fleet</a></li><li></li><li><a href="module-Fleet-Vehicle.html">Vehicle</a></li><li></li><li><a href="module-Package-Package.html">Package</a></li><li></li><li><a href="module-Shipment-Shipment.html">Shipment</a><ul class='methods'><li data-type='method'><a href="module-Shipment-Shipment.html#getWeightkg">getWeightkg</a></li><li data-type='method'><a href="module-Shipment-Shipment.html#getWeightkg">getWeightkg</a></li></ul></li><li></li></ul><h3>Modules</h3><ul><li><a href="module-Coupon.html">Coupon</a><ul class='methods'><li data-type='method'><a href="module-Coupon.html#.calculateDiscount">calculateDiscount</a></li><li data-type='method'><a href="module-Coupon.html#.calculateDiscount">calculateDiscount</a></li><li data-type='method'><a href="module-Coupon.html#.findCoupon">findCoupon</a></li><li data-type='method'><a href="module-Coupon.html#.findCoupon">findCoupon</a></li><li data-type='method'><a href="module-Coupon.html#.getPackageWithDiscount">getPackageWithDiscount</a></li><li data-type='method'><a href="module-Coupon.html#.getPackageWithDiscount">getPackageWithDiscount</a></li><li data-type='method'><a href="module-Coupon.html#.InRange">InRange</a></li><li data-type='method'><a href="module-Coupon.html#.InRange">InRange</a></li><li data-type='method'><a href="module-Coupon.html#.isPackageEligibleForOffer">isPackageEligibleForOffer</a></li><li data-type='method'><a href="module-Coupon.html#.isPackageEligibleForOffer">isPackageEligibleForOffer</a></li><li data-type='method'><a href="module-Coupon.html#.isValidCoupon">isValidCoupon</a></li><li data-type='method'><a href="module-Coupon.html#.isValidCoupon">isValidCoupon</a></li></ul></li><li></li><li><a href="module-Estimator.html">Estimator</a><ul class='methods'><li data-type='method'><a href="module-Estimator.html#.calculateDeliveryCost">calculateDeliveryCost</a></li><li data-type='method'><a href="module-Estimator.html#.calculateDeliveryCost">calculateDeliveryCost</a></li><li data-type='method'><a href="module-Estimator.html#.getPackageWithCost">getPackageWithCost</a></li><li data-type='method'><a href="module-Estimator.html#.getPackageWithCost">getPackageWithCost</a></li><li data-type='method'><a href="module-Estimator.html#~baseEstimator">baseEstimator</a></li><li data-type='method'><a href="module-Estimator.html#~baseEstimator">baseEstimator</a></li><li data-type='method'><a href="module-Estimator.html#~baseEstimatorWithCoupon">baseEstimatorWithCoupon</a></li><li data-type='method'><a href="module-Estimator.html#~baseEstimatorWithCoupon">baseEstimatorWithCoupon</a></li></ul></li><li></li><li></li><li></li><li><a href="module-Fleet.html">Fleet</a><ul class='methods'><li data-type='method'><a href="module-Fleet.html#.makeFleet">makeFleet</a></li><li data-type='method'><a href="module-Fleet.html#.makeFleet">makeFleet</a></li><li data-type='method'><a href="module-Fleet.html#.makeVehicle">makeVehicle</a></li><li data-type='method'><a href="module-Fleet.html#.makeVehicle">makeVehicle</a></li></ul></li><li></li><li></li><li></li><li><a href="module-Package.html">Package</a><ul class='methods'><li data-type='method'><a href="module-Package.html#.makePackage">makePackage</a></li><li data-type='method'><a href="module-Package.html#.makePackage">makePackage</a></li></ul></li><li></li><li><a href="module-Shipment.html">Shipment</a><ul class='methods'><li data-type='method'><a href="module-Shipment.html#.makeShipment">makeShipment</a></li><li data-type='method'><a href="module-Shipment.html#.makeShipment">makeShipment</a></li></ul></li><li></li></ul><h3><a href="global.html">Global</a></h3>
-</nav>
-
-<div id="main">
-    
-    <h1 class="page-title">Coupon</h1>
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
     
 
-    
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">Koriko Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/rahmancam/koriko"
+                        >
+                            Github Project
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://koriko.netlify.app"
+                        >
+                            Live Demo
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-Coupon.html">Coupon</a></li><li><a href="module-Estimator.html">Estimator</a></li><li><a href="module-Fleet.html">Fleet</a></li><li><a href="module-Package.html">Package</a></li><li><a href="module-Shipment.html">Shipment</a></li></ul><h3>Classes</h3><ul><li><a href="module-Fleet-Fleet.html">Fleet</a></li><li><a href="module-Fleet-FleetPriorityQueue.html">FleetPriorityQueue</a></li><li><a href="module-Fleet-Vehicle.html">Vehicle</a></li><li><a href="module-Package-Package.html">Package</a></li><li><a href="module-Shipment-Shipment.html">Shipment</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Module</p>
+                    <h1>Coupon</h1>
+                </header>
+                
 
 
 
@@ -65,72 +114,32 @@
 </header>
 
 <article>
+    <div class="container-overview">
     
-        <div class="container-overview">
+        
+
         
             
 
+
+    
+    <h4 class="name" id="module:Coupon">
+        <a class="href-link" href="#module:Coupon">#</a>
+        
+        <span class="code-name">
             
-                
-
-    
-
-    <h4 class="name" id="module:Coupon"><span class="type-signature"></span>(require("Coupon"))<span class="signature">(packageIem, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line9">line 9</a>
-    </li></ul></dd>
+                (require("Coupon"))<span class="signature">(packageIem, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
     
 
     
-
     
-
+    <div class="description">
+        <p>Apply coupon to package if valid and eligible</p>
+    </div>
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Apply coupon to package if valid and eligible</p>
-</div>
-
-
 
 
 
@@ -142,123 +151,80 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageIem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageIem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
 
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"></td>
-        </tr>
+  <td class="description last"></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Package with discount</p>
+        </tbody>
+    </table>
 </div>
 
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-            
-                
-
-    
-
-    <h4 class="name" id="module:Coupon"><span class="type-signature"></span>(require("Coupon"))<span class="signature">(packageIem, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
 
 
 
@@ -266,11 +232,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
 
     
 
@@ -293,13 +254,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line9">line 9</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -307,9 +274,6 @@
 
 
 
-<div class="description usertext">
-    <p>Apply coupon to package if valid and eligible</p>
-</div>
 
 
 
@@ -321,200 +285,59 @@
 
 
 
-    <h5>Parameters:</h5>
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
+    <div class='param-desc column is-7'><p>Package with discount</p></div>
     
-
-        <tr>
-            
-                <td class="name"><code>packageIem</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
     
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Package with discount</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
+</div>
 
-
-
-            
-        
+                
         </div>
-    
+    </div>
 
-    
 
-    
 
-    
-    
-    
 
-     
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
 
         
             
 
-    
-
-    <h4 class="name" id=".calculateDiscount"><span class="type-signature">(static) </span>calculateDiscount<span class="signature">(totalCost, discountPercentage)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
     
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line35">line 35</a>
-    </li></ul></dd>
+    <h4 class="name" id="module:Coupon">
+        <a class="href-link" href="#module:Coupon">#</a>
+        
+        <span class="code-name">
+            
+                (require("Coupon"))<span class="signature">(packageIem, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
     
 
     
-
     
-
+    <div class="description">
+        <p>Apply coupon to package if valid and eligible</p>
+    </div>
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Calculate discount amount</p>
-</div>
-
-
 
 
 
@@ -526,466 +349,783 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>totalCost</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
+            <th>Type</th>
 
             
 
             
 
-            <td class="description last"><p>Total Cost</p></td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>discountPercentage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Discount percentage</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
+        <tbody>
         
-<div class="param-desc">
-    <p>Discount amount</p>
-</div>
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageIem</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
+  
+  </td>
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
+  
 
+  
 
-    </dd>
-</dl>
-
-    
-
+  <td class="description last"></td>
+</tr>
 
 
         
-            
-
-    
-
-    <h4 class="name" id=".calculateDiscount"><span class="type-signature">(static) </span>calculateDiscount<span class="signature">(totalCost, discountPercentage)</span><span class="type-signature"> &rarr; {number}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line35">line 35</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Calculate discount amount</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>totalCost</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
 
             
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Total Cost</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discountPercentage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Discount percentage</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Discount amount</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".findCoupon"><span class="type-signature">(static) </span>findCoupon<span class="signature">(offerCode, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Coupon">Coupon</a>|undefined}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Find coupon by offer code</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>offerCode</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Offer code</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>list of coupons</p></td>
-        </tr>
+  <td class="description last"></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Coupon or undefined</p>
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line9">line 9</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Package with discount</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="global.html#Package">Package</a></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".calculateDiscount">
+        <a class="href-link" href="#.calculateDiscount">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                calculateDiscount<span class="signature">(totalCost, discountPercentage)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Calculate discount amount</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>totalCost</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Total Cost</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discountPercentage</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Discount percentage</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line35">line 35</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Discount amount</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">number</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".calculateDiscount">
+        <a class="href-link" href="#.calculateDiscount">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                calculateDiscount<span class="signature">(totalCost, discountPercentage)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Calculate discount amount</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>totalCost</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Total Cost</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discountPercentage</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Discount percentage</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line35">line 35</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Discount amount</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">number</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".findCoupon">
+        <a class="href-link" href="#.findCoupon">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                findCoupon<span class="signature">(offerCode, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Coupon">Coupon</a>|undefined}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Find coupon by offer code</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>offerCode</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Offer code</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>list of coupons</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line59">line 59</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Coupon or undefined</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#Coupon">Coupon</a></span>
 |
@@ -993,74 +1133,44 @@
 <span class="param-type">undefined</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".findCoupon"><span class="type-signature">(static) </span>findCoupon<span class="signature">(offerCode, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Coupon">Coupon</a>|undefined}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Find coupon by offer code</p>
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".findCoupon">
+        <a class="href-link" href="#.findCoupon">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                findCoupon<span class="signature">(offerCode, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Coupon">Coupon</a>|undefined}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Find coupon by offer code</p>
+    </div>
+    
 
 
 
@@ -1072,104 +1182,155 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>offerCode</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>offerCode</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">string</span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Offer code</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
 
-            
-
-            <td class="description last"><p>Offer code</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>list of coupons</p></td>
-        </tr>
+  <td class="description last"><p>list of coupons</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Coupon or undefined</p>
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line59">line 59</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Coupon or undefined</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#Coupon">Coupon</a></span>
 |
@@ -1177,74 +1338,44 @@
 <span class="param-type">undefined</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getPackageWithDiscount"><span class="type-signature">(static) </span>getPackageWithDiscount<span class="signature">(packageItem, discount, discountPercentage)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line96">line 96</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get Package with discount</p>
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".getPackageWithDiscount">
+        <a class="href-link" href="#.getPackageWithDiscount">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                getPackageWithDiscount<span class="signature">(packageItem, discount, discountPercentage)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Get Package with discount</p>
+    </div>
+    
 
 
 
@@ -1256,142 +1387,105 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discount</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discount</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Discount amount</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discountPercentage</code></td>
+  
 
-            
-
-            <td class="description last"><p>Discount amount</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discountPercentage</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>Discount percentage</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
+  <td class="description last"><p>Discount percentage</p></td>
+</tr>
 
 
         
-            
+        </tbody>
+    </table>
+</div>
 
-    
-
-    <h4 class="name" id=".getPackageWithDiscount"><span class="type-signature">(static) </span>getPackageWithDiscount<span class="signature">(packageItem, discount, discountPercentage)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
 
 
 
@@ -1399,11 +1493,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line96">line 96</a>
-    </li></ul></dd>
-    
 
     
 
@@ -1426,13 +1515,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line96">line 96</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -1440,11 +1535,72 @@
 
 
 
-<div class="description usertext">
-    <p>Get Package with discount</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="global.html#Package">Package</a></span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".getPackageWithDiscount">
+        <a class="href-link" href="#.getPackageWithDiscount">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                getPackageWithDiscount<span class="signature">(packageItem, discount, discountPercentage)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Get Package with discount</p>
+    </div>
+    
 
 
 
@@ -1456,142 +1612,105 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discount</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discount</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Discount amount</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discountPercentage</code></td>
+  
 
-            
-
-            <td class="description last"><p>Discount amount</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discountPercentage</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>Discount percentage</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
+  <td class="description last"><p>Discount percentage</p></td>
+</tr>
 
 
         
-            
+        </tbody>
+    </table>
+</div>
 
-    
-
-    <h4 class="name" id=".InRange"><span class="type-signature">(static) </span>InRange<span class="signature">(number, min, max)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
 
 
 
@@ -1599,11 +1718,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line85">line 85</a>
-    </li></ul></dd>
-    
 
     
 
@@ -1626,13 +1740,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line96">line 96</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -1640,11 +1760,72 @@
 
 
 
-<div class="description usertext">
-    <p>Value In Range</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="global.html#Package">Package</a></span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".InRange">
+        <a class="href-link" href="#.InRange">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                InRange<span class="signature">(number, min, max)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Value In Range</p>
+    </div>
+    
 
 
 
@@ -1656,199 +1837,222 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>number</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>number</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>value</p></td>
-        </tr>
+  <td class="description last"><p>value</p></td>
+</tr>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>min</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Min value</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Max value</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>status</p>
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>min</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Min value</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>max</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Max value</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line85">line 85</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type">boolean</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".InRange"><span class="type-signature">(static) </span>InRange<span class="signature">(number, min, max)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line85">line 85</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Value In Range</p>
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".InRange">
+        <a class="href-link" href="#.InRange">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                InRange<span class="signature">(number, min, max)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Value In Range</p>
+    </div>
+    
 
 
 
@@ -1860,199 +2064,222 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>number</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>number</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>value</p></td>
-        </tr>
+  <td class="description last"><p>value</p></td>
+</tr>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>min</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Min value</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Max value</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>status</p>
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>min</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Min value</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>max</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Max value</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line85">line 85</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type">boolean</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isPackageEligibleForOffer"><span class="type-signature">(static) </span>isPackageEligibleForOffer<span class="signature">(packageItem, coupon)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line69">line 69</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Is package eligible for offer</p>
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".isPackageEligibleForOffer">
+        <a class="href-link" href="#.isPackageEligibleForOffer">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                isPackageEligibleForOffer<span class="signature">(packageItem, coupon)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Is package eligible for offer</p>
+    </div>
+    
 
 
 
@@ -2064,123 +2291,80 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupon</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupon</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Coupon">Coupon</a></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>Coupon</p></td>
-        </tr>
+  <td class="description last"><p>Coupon</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>eligibility status</p>
+        </tbody>
+    </table>
 </div>
 
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isPackageEligibleForOffer"><span class="type-signature">(static) </span>isPackageEligibleForOffer<span class="signature">(packageItem, coupon)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
 
 
 
@@ -2188,11 +2372,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line69">line 69</a>
-    </li></ul></dd>
-    
 
     
 
@@ -2215,13 +2394,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line69">line 69</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2229,11 +2414,74 @@
 
 
 
-<div class="description usertext">
-    <p>Is package eligible for offer</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>eligibility status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">boolean</span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".isPackageEligibleForOffer">
+        <a class="href-link" href="#.isPackageEligibleForOffer">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                isPackageEligibleForOffer<span class="signature">(packageItem, coupon)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Is package eligible for offer</p>
+    </div>
+    
 
 
 
@@ -2245,123 +2493,80 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupon</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupon</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Coupon">Coupon</a></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>Coupon</p></td>
-        </tr>
+  <td class="description last"><p>Coupon</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>eligibility status</p>
+        </tbody>
+    </table>
 </div>
 
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isValidCoupon"><span class="type-signature">(static) </span>isValidCoupon<span class="signature">(packageItem, coupons)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
 
 
 
@@ -2369,11 +2574,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line45">line 45</a>
-    </li></ul></dd>
-    
 
     
 
@@ -2396,13 +2596,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line69">line 69</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2410,11 +2616,74 @@
 
 
 
-<div class="description usertext">
-    <p>Check if valid coupon</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>eligibility status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">boolean</span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".isValidCoupon">
+        <a class="href-link" href="#.isValidCoupon">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                isValidCoupon<span class="signature">(packageItem, coupons)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Check if valid coupon</p>
+    </div>
+    
 
 
 
@@ -2426,123 +2695,80 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>List of coupons</p></td>
-        </tr>
+  <td class="description last"><p>List of coupons</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>coupon valid status</p>
+        </tbody>
+    </table>
 </div>
 
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isValidCoupon"><span class="type-signature">(static) </span>isValidCoupon<span class="signature">(packageItem, coupons)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
 
 
 
@@ -2550,11 +2776,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line45">line 45</a>
-    </li></ul></dd>
-    
 
     
 
@@ -2577,13 +2798,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line45">line 45</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2591,11 +2818,74 @@
 
 
 
-<div class="description usertext">
-    <p>Check if valid coupon</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>coupon valid status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">boolean</span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".isValidCoupon">
+        <a class="href-link" href="#.isValidCoupon">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                isValidCoupon<span class="signature">(packageItem, coupons)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Check if valid coupon</p>
+    </div>
+    
 
 
 
@@ -2607,116 +2897,174 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>List of coupons</p></td>
-        </tr>
+  <td class="description last"><p>List of coupons</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>coupon valid status</p>
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line45">line 45</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>coupon valid status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type">boolean</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
+</div>
+
+                
+        </div>
+    </div>
 
 
 
-        
+
+</div>
+            
+            </div>
+        </div>
     
 
     
@@ -2745,72 +3093,32 @@
 </header>
 
 <article>
+    <div class="container-overview">
     
-        <div class="container-overview">
+        
+
         
             
 
+
+    
+    <h4 class="name" id="module:Coupon">
+        <a class="href-link" href="#module:Coupon">#</a>
+        
+        <span class="code-name">
             
-                
-
-    
-
-    <h4 class="name" id="module:Coupon"><span class="type-signature"></span>(require("Coupon"))<span class="signature">(packageIem, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line9">line 9</a>
-    </li></ul></dd>
+                (require("Coupon"))<span class="signature">(packageIem, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
     
 
     
-
     
-
+    <div class="description">
+        <p>Apply coupon to package if valid and eligible</p>
+    </div>
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Apply coupon to package if valid and eligible</p>
-</div>
-
-
 
 
 
@@ -2822,123 +3130,80 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageIem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageIem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
 
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"></td>
-        </tr>
+  <td class="description last"></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Package with discount</p>
+        </tbody>
+    </table>
 </div>
 
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-            
-                
-
-    
-
-    <h4 class="name" id="module:Coupon"><span class="type-signature"></span>(require("Coupon"))<span class="signature">(packageIem, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
 
 
 
@@ -2946,11 +3211,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line9">line 9</a>
-    </li></ul></dd>
-    
 
     
 
@@ -2973,13 +3233,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line9">line 9</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -2987,9 +3253,6 @@
 
 
 
-<div class="description usertext">
-    <p>Apply coupon to package if valid and eligible</p>
-</div>
 
 
 
@@ -3001,200 +3264,59 @@
 
 
 
-    <h5>Parameters:</h5>
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
+    <div class='param-desc column is-7'><p>Package with discount</p></div>
     
-
-        <tr>
-            
-                <td class="name"><code>packageIem</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
     
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Package with discount</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
+</div>
 
-
-
-            
-        
+                
         </div>
-    
+    </div>
 
-    
 
-    
 
-    
-    
-    
 
-     
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
 
         
             
 
-    
-
-    <h4 class="name" id=".calculateDiscount"><span class="type-signature">(static) </span>calculateDiscount<span class="signature">(totalCost, discountPercentage)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
     
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line35">line 35</a>
-    </li></ul></dd>
+    <h4 class="name" id="module:Coupon">
+        <a class="href-link" href="#module:Coupon">#</a>
+        
+        <span class="code-name">
+            
+                (require("Coupon"))<span class="signature">(packageIem, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
     
 
     
-
     
-
+    <div class="description">
+        <p>Apply coupon to package if valid and eligible</p>
+    </div>
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Calculate discount amount</p>
-</div>
-
-
 
 
 
@@ -3206,466 +3328,783 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>totalCost</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
+            <th>Type</th>
 
             
 
             
 
-            <td class="description last"><p>Total Cost</p></td>
+            <th class="last">Description</th>
         </tr>
+        </thead>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>discountPercentage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Discount percentage</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
+        <tbody>
         
-<div class="param-desc">
-    <p>Discount amount</p>
-</div>
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageIem</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
+  
+  </td>
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
+  
 
+  
 
-    </dd>
-</dl>
-
-    
-
+  <td class="description last"></td>
+</tr>
 
 
         
-            
-
-    
-
-    <h4 class="name" id=".calculateDiscount"><span class="type-signature">(static) </span>calculateDiscount<span class="signature">(totalCost, discountPercentage)</span><span class="type-signature"> &rarr; {number}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line35">line 35</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Calculate discount amount</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>totalCost</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
 
             
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Total Cost</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discountPercentage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Discount percentage</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Discount amount</p>
-</div>
-
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".findCoupon"><span class="type-signature">(static) </span>findCoupon<span class="signature">(offerCode, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Coupon">Coupon</a>|undefined}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Find coupon by offer code</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>offerCode</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Offer code</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>list of coupons</p></td>
-        </tr>
+  <td class="description last"></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Coupon or undefined</p>
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line9">line 9</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Package with discount</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="global.html#Package">Package</a></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".calculateDiscount">
+        <a class="href-link" href="#.calculateDiscount">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                calculateDiscount<span class="signature">(totalCost, discountPercentage)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Calculate discount amount</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>totalCost</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Total Cost</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discountPercentage</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Discount percentage</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line35">line 35</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Discount amount</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">number</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".calculateDiscount">
+        <a class="href-link" href="#.calculateDiscount">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                calculateDiscount<span class="signature">(totalCost, discountPercentage)</span><span class="type-signature"> &rarr; {number}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Calculate discount amount</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>totalCost</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Total Cost</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discountPercentage</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Discount percentage</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line35">line 35</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Discount amount</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">number</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".findCoupon">
+        <a class="href-link" href="#.findCoupon">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                findCoupon<span class="signature">(offerCode, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Coupon">Coupon</a>|undefined}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Find coupon by offer code</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>offerCode</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Offer code</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>list of coupons</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line59">line 59</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Coupon or undefined</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#Coupon">Coupon</a></span>
 |
@@ -3673,74 +4112,44 @@
 <span class="param-type">undefined</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".findCoupon"><span class="type-signature">(static) </span>findCoupon<span class="signature">(offerCode, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Coupon">Coupon</a>|undefined}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Find coupon by offer code</p>
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".findCoupon">
+        <a class="href-link" href="#.findCoupon">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                findCoupon<span class="signature">(offerCode, coupons)</span><span class="type-signature"> &rarr; {<a href="global.html#Coupon">Coupon</a>|undefined}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Find coupon by offer code</p>
+    </div>
+    
 
 
 
@@ -3752,104 +4161,155 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>offerCode</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>offerCode</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">string</span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Offer code</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
 
-            
-
-            <td class="description last"><p>Offer code</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>list of coupons</p></td>
-        </tr>
+  <td class="description last"><p>list of coupons</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Coupon or undefined</p>
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line59">line 59</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>Coupon or undefined</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#Coupon">Coupon</a></span>
 |
@@ -3857,74 +4317,44 @@
 <span class="param-type">undefined</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".getPackageWithDiscount"><span class="type-signature">(static) </span>getPackageWithDiscount<span class="signature">(packageItem, discount, discountPercentage)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line96">line 96</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Get Package with discount</p>
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".getPackageWithDiscount">
+        <a class="href-link" href="#.getPackageWithDiscount">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                getPackageWithDiscount<span class="signature">(packageItem, discount, discountPercentage)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Get Package with discount</p>
+    </div>
+    
 
 
 
@@ -3936,142 +4366,105 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discount</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discount</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Discount amount</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discountPercentage</code></td>
+  
 
-            
-
-            <td class="description last"><p>Discount amount</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discountPercentage</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>Discount percentage</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
+  <td class="description last"><p>Discount percentage</p></td>
+</tr>
 
 
         
-            
+        </tbody>
+    </table>
+</div>
 
-    
-
-    <h4 class="name" id=".getPackageWithDiscount"><span class="type-signature">(static) </span>getPackageWithDiscount<span class="signature">(packageItem, discount, discountPercentage)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
 
 
 
@@ -4079,11 +4472,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line96">line 96</a>
-    </li></ul></dd>
-    
 
     
 
@@ -4106,13 +4494,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line96">line 96</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -4120,11 +4514,72 @@
 
 
 
-<div class="description usertext">
-    <p>Get Package with discount</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="global.html#Package">Package</a></span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".getPackageWithDiscount">
+        <a class="href-link" href="#.getPackageWithDiscount">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                getPackageWithDiscount<span class="signature">(packageItem, discount, discountPercentage)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Get Package with discount</p>
+    </div>
+    
 
 
 
@@ -4136,142 +4591,105 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discount</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discount</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Discount amount</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>discountPercentage</code></td>
+  
 
-            
-
-            <td class="description last"><p>Discount amount</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>discountPercentage</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>Discount percentage</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
+  <td class="description last"><p>Discount percentage</p></td>
+</tr>
 
 
         
-            
+        </tbody>
+    </table>
+</div>
 
-    
-
-    <h4 class="name" id=".InRange"><span class="type-signature">(static) </span>InRange<span class="signature">(number, min, max)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
 
 
 
@@ -4279,11 +4697,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line85">line 85</a>
-    </li></ul></dd>
-    
 
     
 
@@ -4306,13 +4719,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line96">line 96</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -4320,11 +4739,72 @@
 
 
 
-<div class="description usertext">
-    <p>Value In Range</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="global.html#Package">Package</a></span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".InRange">
+        <a class="href-link" href="#.InRange">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                InRange<span class="signature">(number, min, max)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Value In Range</p>
+    </div>
+    
 
 
 
@@ -4336,199 +4816,222 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>number</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>number</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>value</p></td>
-        </tr>
+  <td class="description last"><p>value</p></td>
+</tr>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>min</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Min value</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Max value</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>status</p>
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>min</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Min value</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>max</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Max value</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line85">line 85</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type">boolean</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".InRange"><span class="type-signature">(static) </span>InRange<span class="signature">(number, min, max)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line85">line 85</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Value In Range</p>
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".InRange">
+        <a class="href-link" href="#.InRange">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                InRange<span class="signature">(number, min, max)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Value In Range</p>
+    </div>
+    
 
 
 
@@ -4540,199 +5043,222 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>number</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>number</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">number</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>value</p></td>
-        </tr>
+  <td class="description last"><p>value</p></td>
+</tr>
 
-    
-
-        <tr>
-            
-                <td class="name"><code>min</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Min value</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Max value</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>status</p>
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>min</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Min value</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>max</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Max value</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line85">line 85</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type">boolean</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isPackageEligibleForOffer"><span class="type-signature">(static) </span>isPackageEligibleForOffer<span class="signature">(packageItem, coupon)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line69">line 69</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Is package eligible for offer</p>
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".isPackageEligibleForOffer">
+        <a class="href-link" href="#.isPackageEligibleForOffer">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                isPackageEligibleForOffer<span class="signature">(packageItem, coupon)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Is package eligible for offer</p>
+    </div>
+    
 
 
 
@@ -4744,123 +5270,80 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupon</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupon</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Coupon">Coupon</a></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>Coupon</p></td>
-        </tr>
+  <td class="description last"><p>Coupon</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>eligibility status</p>
+        </tbody>
+    </table>
 </div>
 
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isPackageEligibleForOffer"><span class="type-signature">(static) </span>isPackageEligibleForOffer<span class="signature">(packageItem, coupon)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
 
 
 
@@ -4868,11 +5351,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line69">line 69</a>
-    </li></ul></dd>
-    
 
     
 
@@ -4895,13 +5373,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line69">line 69</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -4909,11 +5393,74 @@
 
 
 
-<div class="description usertext">
-    <p>Is package eligible for offer</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>eligibility status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">boolean</span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".isPackageEligibleForOffer">
+        <a class="href-link" href="#.isPackageEligibleForOffer">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                isPackageEligibleForOffer<span class="signature">(packageItem, coupon)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Is package eligible for offer</p>
+    </div>
+    
 
 
 
@@ -4925,123 +5472,80 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupon</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupon</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Coupon">Coupon</a></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>Coupon</p></td>
-        </tr>
+  <td class="description last"><p>Coupon</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>eligibility status</p>
+        </tbody>
+    </table>
 </div>
 
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isValidCoupon"><span class="type-signature">(static) </span>isValidCoupon<span class="signature">(packageItem, coupons)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
 
 
 
@@ -5049,11 +5553,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line45">line 45</a>
-    </li></ul></dd>
-    
 
     
 
@@ -5076,13 +5575,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line69">line 69</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -5090,11 +5595,74 @@
 
 
 
-<div class="description usertext">
-    <p>Check if valid coupon</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>eligibility status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">boolean</span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".isValidCoupon">
+        <a class="href-link" href="#.isValidCoupon">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                isValidCoupon<span class="signature">(packageItem, coupons)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Check if valid coupon</p>
+    </div>
+    
 
 
 
@@ -5106,123 +5674,80 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>List of coupons</p></td>
-        </tr>
+  <td class="description last"><p>List of coupons</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>coupon valid status</p>
+        </tbody>
+    </table>
 </div>
 
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id=".isValidCoupon"><span class="type-signature">(static) </span>isValidCoupon<span class="signature">(packageItem, coupons)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
 
 
 
@@ -5230,11 +5755,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line45">line 45</a>
-    </li></ul></dd>
-    
 
     
 
@@ -5257,13 +5777,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line45">line 45</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -5271,11 +5797,74 @@
 
 
 
-<div class="description usertext">
-    <p>Check if valid coupon</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>coupon valid status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">boolean</span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".isValidCoupon">
+        <a class="href-link" href="#.isValidCoupon">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                isValidCoupon<span class="signature">(packageItem, coupons)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Check if valid coupon</p>
+    </div>
+    
 
 
 
@@ -5287,116 +5876,174 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>packageItem</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>packageItem</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-            
-            </td>
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Package instance</p></td>
+</tr>
+
+
+        
 
             
+<tr class="deep-level-0">
+  
+      <td class="name"><code>coupons</code></td>
+  
 
-            
-
-            <td class="description last"><p>Package instance</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>coupons</code></td>
-            
-
-            <td class="type">
-            
-                
+  <td class="type">
+  
+      
 <span class="param-type">Array.&lt;<a href="global.html#Coupon">Coupon</a>></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"><p>List of coupons</p></td>
-        </tr>
+  <td class="description last"><p>List of coupons</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>coupon valid status</p>
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="core_coupon-handler.js.html" class="button">View Source</a>
+            <span>
+                <a href="core_coupon-handler.js.html">core/coupon-handler.js</a>, <a href="core_coupon-handler.js.html#line45">line 45</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>coupon valid status</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type">boolean</span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
+</div>
+
+                
+        </div>
+    </div>
 
 
 
-        
+
+</div>
+            
+            </div>
+        </div>
     
 
     
@@ -5409,21 +6056,15 @@
 
 
 
-    
-    
-</div>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Sun Jun 13 2021 06:54:08 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
-</footer>
-
-<script>prettyPrint();</script>
-<script src="scripts/polyfill.js"></script>
-<script src="scripts/linenumber.js"></script>
-
-
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
 
 </body>
 </html>

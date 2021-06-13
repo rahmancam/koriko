@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Koriko Documentation models/shipment.js</title>
+  <title>Koriko Documentation core/maximize-by-package.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -96,7 +96,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>models/shipment.js</h1>
+                    <h1>core/maximize-by-package.js</h1>
                 </header>
                 
 
@@ -107,45 +107,15 @@
         <article>
             <pre class="prettyprint source linenums"><code>/** @module Shipment */
 
-import validateShipmentOrThrowError from '../helpers/validate-shipment'
-import { v4 as uuid } from 'uuid'
 /**
- * Shipment class to hold shipment information
+ * Get values of packages for which has to be maximized
+ * @param {Array&lt;Package>} packages list of packages
+ * @returns {Array&lt;number>} list of value on which is to be maximized
  */
-class Shipment {
-    /**
-     * @property {string} Shipment Id
-     */
-    id = `${uuid()}`
-    /**
-     * @property {Array&lt;Package>} packages
-     */
-    packages = null
-
-    constructor ({ packages }) {
-      this.packages = packages
-    }
-
-    /**
-     * Get shipmetn weight
-     * @returns {number} Total shipment weight
-     */
-    getWeightkg () {
-      return this.packages?.reduce((acc, item) => acc + item.weightKg, 0)
-    }
+export default function maximizeByNumberOfPackage (packages) {
+  // Given all package equal value = 1, to maximize by number of package
+  return Array(packages.length).fill(1)
 }
-
-/**
- * Factory function to make a new shipment
- * @param {ShipmentOptions} options shipment options
- * @returns {Shipment}
- */
-export function makeShipment ({ packages }) {
-  validateShipmentOrThrowError({ packages })
-  return new Shipment({ packages })
-}
-
-export default Shipment
 </code></pre>
         </article>
     </section>

@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Koriko Documentation models/shipment.js</title>
+  <title>Koriko Documentation core/shipment-estimator.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -96,7 +96,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>models/shipment.js</h1>
+                    <h1>core/shipment-estimator.js</h1>
                 </header>
                 
 
@@ -105,47 +105,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** @module Shipment */
+            <pre class="prettyprint source linenums"><code>/** @module Estimator */
 
-import validateShipmentOrThrowError from '../helpers/validate-shipment'
-import { v4 as uuid } from 'uuid'
-/**
- * Shipment class to hold shipment information
- */
-class Shipment {
-    /**
-     * @property {string} Shipment Id
-     */
-    id = `${uuid()}`
-    /**
-     * @property {Array&lt;Package>} packages
-     */
-    packages = null
-
-    constructor ({ packages }) {
-      this.packages = packages
-    }
-
-    /**
-     * Get shipmetn weight
-     * @returns {number} Total shipment weight
-     */
-    getWeightkg () {
-      return this.packages?.reduce((acc, item) => acc + item.weightKg, 0)
-    }
-}
+import baseShipmentAllocationStrategy from './shipment-allocation-strategy'
+import maximizeByNumberOfPackage from './maximize-by-package'
+import makeShipmentAllocator from './shipment-allocator'
+import makeFleetAllocator from './fleet-allocator'
+import baseFleetAllocationStrategy from './fleet-allocation-strategy'
 
 /**
- * Factory function to make a new shipment
- * @param {ShipmentOptions} options shipment options
- * @returns {Shipment}
+ * Base shipment estimator
+ * @param {Array&lt;Package>} packages list of packages
+ * @param {FleetOptions} fleetDetail fleet detail
+ * @param {function} [maximizeBy] maximize packages by. (default=number of packages)
+ * @param {function} [strategy] override shipment allocation strategy
+ * @returns {Array&lt;Shipment>} list of shipments with estimation
  */
-export function makeShipment ({ packages }) {
-  validateShipmentOrThrowError({ packages })
-  return new Shipment({ packages })
+function baseShipmentEstimator (packages, fleetDetail,
+  maximizeBy = maximizeByNumberOfPackage,
+  shipment_strategy = baseShipmentAllocationStrategy,
+  fleet_strategy = baseFleetAllocationStrategy) {
+  const shipmentAllocator = makeShipmentAllocator(fleetDetail, maximizeBy)
+  const fleetAllocator = makeFleetAllocator(fleetDetail)
+  const shipments = shipmentAllocator.allocate(packages, shipment_strategy)
+  return fleetAllocator.allocate(shipments, fleet_strategy)
 }
 
-export default Shipment
+export default baseShipmentEstimator
 </code></pre>
         </article>
     </section>

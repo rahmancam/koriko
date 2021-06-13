@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koriko Documentation core/shipment-allocation-strategy.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">Koriko Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/rahmancam/koriko"
+                        >
+                            Github Project
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://koriko.netlify.app"
+                        >
+                            Live Demo
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-Coupon.html">Coupon</a></li><li><a href="module-Estimator.html">Estimator</a></li><li><a href="module-Fleet.html">Fleet</a></li><li><a href="module-Package.html">Package</a></li><li><a href="module-Shipment.html">Shipment</a></li></ul><h3>Classes</h3><ul><li><a href="module-Fleet-Fleet.html">Fleet</a></li><li><a href="module-Fleet-FleetPriorityQueue.html">FleetPriorityQueue</a></li><li><a href="module-Fleet-Vehicle.html">Vehicle</a></li><li><a href="module-Package-Package.html">Package</a></li><li><a href="module-Shipment-Shipment.html">Shipment</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>core/shipment-allocation-strategy.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module Shipment */
+import { makeShipment } from '../models/shipment'
+import maximizeByNumberOfPackage from './maximize-by-package'
+
+/**
+ * Base shipment allocation strategy
+ * @param {ShipmentAllocationOption} options
+ * @param {function} [maximizeBy] maximize by strategy
+ * @returns {Array&lt;Shipment>}
+ */
+function baseShipmentAllocationStrategy ({ packages, maxLoadKg }, maximizeBy = maximizeByNumberOfPackage) {
+  return getShipmentsWithMaximumValue({ packages, maxLoadKg }, maximizeBy)
+}
+
+/**
+ * Base shipment allocation strategy
+ * @ignore
+ * @param {ShipmentAllocationOption} options
+ * @param {function} [maximizeBy] maximize by strategy
+ * @returns {Array&lt;Shipment>}
+ */
+export function getShipmentsWithMaximumValue ({ packages, maxLoadKg }, maximizeBy = maximizeByNumberOfPackage) {
+  validateOrThrowError({ packages, maxLoadKg })
+
+  if (packages.length === 1) {
+    return [makeShipment({ packages })]
+  }
+
+  const shipments = []
+  packages = [...packages] // copy of packages
+  packages.sort(sortWeightsByDesc)
+
+  while (packages.length) {
+    const { permutations, weights, values } = getPerumutation({ packages, maxLoadKg }, maximizeBy)
+    const shipment = getShipmentsFromPermuation({ permutations, packages, weights, values, maxLoadKg })
+    packages = getFilteredPackages({ packages, selectedPackages: shipment.packages })
+    shipments.push(shipment)
+  }
+
+  return shipments
+}
+
+/**
+ * Filter selected packages from the list
+ * @ignore
+ * @param {FileterPackageOptions} options
+ * @returns {Array&lt;Package>} filtered packages
+ */
+export function getFilteredPackages ({ packages, selectedPackages }) {
+  return packages.filter((item) => {
+    return !(selectedPackages
+      .filter((selectedItem) => selectedItem.uuid === item.uuid).length > 0)
+  })
+}
+
+/**
+ * Get maximized value packages and get shipments
+ * @ignore
+ * @param {ShipmentPermutationOption} options
+ * @returns {Shipment} shipment
+ */
+export function getShipmentsFromPermuation ({ permutations, packages, weights, values, maxLoadKg }) {
+  let selectedPackages = []
+  let totalValues = permutations[weights.length - 1][maxLoadKg]
+  let remainingLoad = maxLoadKg
+  for (let index = weights.length - 1; index > 0; index--) {
+    if (totalValues !== permutations[index - 1][remainingLoad]) {
+      selectedPackages.push(packages[index])
+      remainingLoad -= weights[index]
+      totalValues -= values[index]
+    }
+  }
+
+  if (totalValues !== 0) {
+    // if not becomes zero, then first is the max
+    selectedPackages = [packages[0]]
+  }
+  return makeShipment({ packages: selectedPackages })
+}
+
+/**
+ * Sort weight by descending (comparator)
+ * @ignore
+ * @param {Package} item1
+ * @param {Package} item2
+ * @returns {number} comparator value
+ */
+export function sortWeightsByDesc (item1, item2) {
+  return item2.weightKg - item1.weightKg
+}
+
+/**
+ * Get maximized values
+ * Solved using 0/1 Knapsack algorithm
+ * @ignore
+ * @param {PermutationOption} options
+ * @param {function} maximizeBy maximize by value
+ * @returns {Object}
+ */
+export function getPerumutation ({ packages, maxLoadKg }, maximizeBy = maximizeByNumberOfPackage) {
+  const numberOfPackages = packages?.length
+  const weights = packages?.map((item) => item.weightKg)
+  // Give all package equal value to maximize
+  const values = maximizeBy(packages)
+
+  const dpCache = Array(values.length)
+    .fill(0)
+    .map(() => Array(maxLoadKg + 1).fill(0))
+
+  for (let index = 0; index &lt; numberOfPackages; index++) dpCache[index][0] = 0
+
+  // if we have only one weight, we will take it if it is not more than the capacity
+  for (let index = 0; index &lt;= maxLoadKg; index++) {
+    if (weights[0] &lt;= index) dpCache[0][index] = values[0]
+  }
+
+  // process all sub-arrays for all the loads
+  for (let packageIndex = 1; packageIndex &lt; numberOfPackages; packageIndex++) {
+    for (let loadIndex = 1; loadIndex &lt;= maxLoadKg; loadIndex++) {
+      let includeMaxValue = 0
+      let excludeMaxValue = 0
+      // include the item, if it is not more than the capacity
+      if (weights[packageIndex] &lt;= loadIndex) includeMaxValue = values[packageIndex] + dpCache[packageIndex - 1][loadIndex - weights[packageIndex]]
+      // exclude the item
+      excludeMaxValue = dpCache[packageIndex - 1][loadIndex]
+      // take maximum
+      dpCache[packageIndex][loadIndex] = Math.max(includeMaxValue, excludeMaxValue)
+    }
+  }
+
+  return {
+    permutations: dpCache,
+    weights,
+    values
+  }
+}
+
+/**
+ * Input arguments validation
+ * @param {AllocatorOption} options
+ * @returns void
+ */
+function validateOrThrowError ({ packages, maxLoadKg }) {
+  if (!packages || !Array.isArray(packages) || packages.length &lt;= 0) {
+    throw new TypeError('Input packages is not valid to getShipmentWithMaximumPackage')
+  }
+
+  if (!maxLoadKg || maxLoadKg &lt;= 0 || typeof maxLoadKg !== 'number') {
+    throw new TypeError(`Invalid maxLoadKg: ${maxLoadKg} to get getShipmentWithMaximumPackage`)
+  }
+}
+
+export default baseShipmentAllocationStrategy
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

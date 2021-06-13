@@ -1,53 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
-    <meta charset="utf-8">
-    <title>Package - Korio</title>
-    
-    <meta name="description" content="A courier service library" />
-    
-        <meta name="keywords" content="courier" />
-        <meta name="keyword" content="courier" />
-    
-    
-    
-    <meta property="og:title" content="Korio"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content=""/>
-    <meta property="og:site_name" content="Koriko"/>
-    <meta property="og:url" content=""/>
-    
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
-    <script src="scripts/nav.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koriko Documentation Package</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
 </head>
-<body>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
 
-<label for="nav-trigger" class="overlay"></label>
 
-<nav >
-    
-    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/rahmancam/koriko" target="_blank" class="menu-item" id="website_link" >Project Website</a></h2><h2><a href="https://koriko.netlify.app" target="_blank" class="menu-item" id="website_link" >Live Demo</a></h2><h3>Classes</h3><ul><li><a href="module-Fleet-Fleet.html">Fleet</a></li><li></li><li><a href="module-Fleet-Vehicle.html">Vehicle</a></li><li></li><li><a href="module-Package-Package.html">Package</a></li><li></li><li><a href="module-Shipment-Shipment.html">Shipment</a><ul class='methods'><li data-type='method'><a href="module-Shipment-Shipment.html#getWeightkg">getWeightkg</a></li><li data-type='method'><a href="module-Shipment-Shipment.html#getWeightkg">getWeightkg</a></li></ul></li><li></li></ul><h3>Modules</h3><ul><li><a href="module-Coupon.html">Coupon</a><ul class='methods'><li data-type='method'><a href="module-Coupon.html#.calculateDiscount">calculateDiscount</a></li><li data-type='method'><a href="module-Coupon.html#.calculateDiscount">calculateDiscount</a></li><li data-type='method'><a href="module-Coupon.html#.findCoupon">findCoupon</a></li><li data-type='method'><a href="module-Coupon.html#.findCoupon">findCoupon</a></li><li data-type='method'><a href="module-Coupon.html#.getPackageWithDiscount">getPackageWithDiscount</a></li><li data-type='method'><a href="module-Coupon.html#.getPackageWithDiscount">getPackageWithDiscount</a></li><li data-type='method'><a href="module-Coupon.html#.InRange">InRange</a></li><li data-type='method'><a href="module-Coupon.html#.InRange">InRange</a></li><li data-type='method'><a href="module-Coupon.html#.isPackageEligibleForOffer">isPackageEligibleForOffer</a></li><li data-type='method'><a href="module-Coupon.html#.isPackageEligibleForOffer">isPackageEligibleForOffer</a></li><li data-type='method'><a href="module-Coupon.html#.isValidCoupon">isValidCoupon</a></li><li data-type='method'><a href="module-Coupon.html#.isValidCoupon">isValidCoupon</a></li></ul></li><li></li><li><a href="module-Estimator.html">Estimator</a><ul class='methods'><li data-type='method'><a href="module-Estimator.html#.calculateDeliveryCost">calculateDeliveryCost</a></li><li data-type='method'><a href="module-Estimator.html#.calculateDeliveryCost">calculateDeliveryCost</a></li><li data-type='method'><a href="module-Estimator.html#.getPackageWithCost">getPackageWithCost</a></li><li data-type='method'><a href="module-Estimator.html#.getPackageWithCost">getPackageWithCost</a></li><li data-type='method'><a href="module-Estimator.html#~baseEstimator">baseEstimator</a></li><li data-type='method'><a href="module-Estimator.html#~baseEstimator">baseEstimator</a></li><li data-type='method'><a href="module-Estimator.html#~baseEstimatorWithCoupon">baseEstimatorWithCoupon</a></li><li data-type='method'><a href="module-Estimator.html#~baseEstimatorWithCoupon">baseEstimatorWithCoupon</a></li></ul></li><li></li><li></li><li></li><li><a href="module-Fleet.html">Fleet</a><ul class='methods'><li data-type='method'><a href="module-Fleet.html#.makeFleet">makeFleet</a></li><li data-type='method'><a href="module-Fleet.html#.makeFleet">makeFleet</a></li><li data-type='method'><a href="module-Fleet.html#.makeVehicle">makeVehicle</a></li><li data-type='method'><a href="module-Fleet.html#.makeVehicle">makeVehicle</a></li></ul></li><li></li><li></li><li></li><li><a href="module-Package.html">Package</a><ul class='methods'><li data-type='method'><a href="module-Package.html#.makePackage">makePackage</a></li><li data-type='method'><a href="module-Package.html#.makePackage">makePackage</a></li></ul></li><li></li><li><a href="module-Shipment.html">Shipment</a><ul class='methods'><li data-type='method'><a href="module-Shipment.html#.makeShipment">makeShipment</a></li><li data-type='method'><a href="module-Shipment.html#.makeShipment">makeShipment</a></li></ul></li><li></li></ul><h3><a href="global.html">Global</a></h3>
-</nav>
-
-<div id="main">
-    
-    <h1 class="page-title">Package</h1>
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
     
 
-    
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">Koriko Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/rahmancam/koriko"
+                        >
+                            Github Project
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://koriko.netlify.app"
+                        >
+                            Live Demo
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-Coupon.html">Coupon</a></li><li><a href="module-Estimator.html">Estimator</a></li><li><a href="module-Fleet.html">Fleet</a></li><li><a href="module-Package.html">Package</a></li><li><a href="module-Shipment.html">Shipment</a></li></ul><h3>Classes</h3><ul><li><a href="module-Fleet-Fleet.html">Fleet</a></li><li><a href="module-Fleet-FleetPriorityQueue.html">FleetPriorityQueue</a></li><li><a href="module-Fleet-Vehicle.html">Vehicle</a></li><li><a href="module-Package-Package.html">Package</a></li><li><a href="module-Shipment-Shipment.html">Shipment</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Module</p>
+                    <h1>Package</h1>
+                </header>
+                
 
 
 
@@ -61,16 +110,14 @@
 </header>
 
 <article>
+    <div class="container-overview">
     
-        <div class="container-overview">
         
-            
 
-            
         
-        </div>
     
-
+    </div>
+    
     
 
     
@@ -86,79 +133,45 @@
             <dd></dd>
         </dl>
     
-    
-    
-
-     
 
     
 
     
 
     
-        <h3 class="subsection-title">Methods</h3>
 
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".makePackage">
+        <a class="href-link" href="#.makePackage">#</a>
         
             
-
-    
-
-    <h4 class="name" id=".makePackage"><span class="type-signature">(static) </span>makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
-    </li></ul></dd>
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
     
 
     
-
     
-
+    <div class="description">
+        <p>Factory function to make new package instance</p>
+    </div>
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Factory function to make new package instance</p>
-</div>
-
-
 
 
 
@@ -170,96 +183,55 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>options</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#PackageOptions">PackageOptions</a></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
+  <td class="description last"></td>
+</tr>
 
 
         
-            
+        </tbody>
+    </table>
+</div>
 
-    
-
-    <h4 class="name" id=".makePackage"><span class="type-signature">(static) </span>makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
 
 
 
@@ -267,11 +239,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
-    </li></ul></dd>
-    
 
     
 
@@ -294,13 +261,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="models_package.js.html" class="button">View Source</a>
+            <span>
+                <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -308,11 +281,72 @@
 
 
 
-<div class="description usertext">
-    <p>Factory function to make new package instance</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="global.html#Package">Package</a></span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".makePackage">
+        <a class="href-link" href="#.makePackage">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Factory function to make new package instance</p>
+    </div>
+    
 
 
 
@@ -324,89 +358,147 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>options</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#PackageOptions">PackageOptions</a></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"></td>
-        </tr>
+  <td class="description last"></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
+        </tbody>
+    </table>
+</div>
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="models_package.js.html" class="button">View Source</a>
+            <span>
+                <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
+</div>
+
+                
+        </div>
+    </div>
 
 
 
-        
+
+</div>
+            
+            </div>
+        </div>
     
 
     
@@ -431,16 +523,14 @@
 </header>
 
 <article>
+    <div class="container-overview">
     
-        <div class="container-overview">
         
-            
 
-            
         
-        </div>
     
-
+    </div>
+    
     
 
     
@@ -456,79 +546,45 @@
             <dd></dd>
         </dl>
     
-    
-    
-
-     
 
     
 
     
 
     
-        <h3 class="subsection-title">Methods</h3>
 
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".makePackage">
+        <a class="href-link" href="#.makePackage">#</a>
         
             
-
-    
-
-    <h4 class="name" id=".makePackage"><span class="type-signature">(static) </span>makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
-    </li></ul></dd>
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
     
 
     
-
     
-
+    <div class="description">
+        <p>Factory function to make new package instance</p>
+    </div>
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Factory function to make new package instance</p>
-</div>
-
-
 
 
 
@@ -540,96 +596,55 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>options</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#PackageOptions">PackageOptions</a></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#Package">Package</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
+  <td class="description last"></td>
+</tr>
 
 
         
-            
+        </tbody>
+    </table>
+</div>
 
-    
-
-    <h4 class="name" id=".makePackage"><span class="type-signature">(static) </span>makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
 
 
 
@@ -637,11 +652,6 @@
 <dl class="details">
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
-    </li></ul></dd>
-    
 
     
 
@@ -664,13 +674,19 @@
     
 
     
-
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="models_package.js.html" class="button">View Source</a>
+            <span>
+                <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -678,11 +694,72 @@
 
 
 
-<div class="description usertext">
-    <p>Factory function to make new package instance</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="global.html#Package">Package</a></span>
+
+
+    </div>
+    
 </div>
 
+                
+        </div>
+    </div>
 
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".makePackage">
+        <a class="href-link" href="#.makePackage">#</a>
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            
+                makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Factory function to make new package instance</p>
+    </div>
+    
 
 
 
@@ -694,89 +771,147 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>options</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type"><a href="global.html#PackageOptions">PackageOptions</a></span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last"></td>
-        </tr>
+  <td class="description last"></td>
+</tr>
 
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
 
         
+        </tbody>
+    </table>
+</div>
 
 
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="models_package.js.html" class="button">View Source</a>
+            <span>
+                <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#Package">Package</a></span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
+</div>
+
+                
+        </div>
+    </div>
 
 
 
-        
+
+</div>
+            
+            </div>
+        </div>
     
 
     
@@ -789,21 +924,15 @@
 
 
 
-    
-    
-</div>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Sun Jun 13 2021 06:54:08 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
-</footer>
-
-<script>prettyPrint();</script>
-<script src="scripts/polyfill.js"></script>
-<script src="scripts/linenumber.js"></script>
-
-
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
 
 </body>
 </html>

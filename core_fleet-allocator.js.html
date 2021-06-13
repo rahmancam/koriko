@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Koriko Documentation models/shipment.js</title>
+  <title>Koriko Documentation core/fleet-allocator.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -96,7 +96,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>models/shipment.js</h1>
+                    <h1>core/fleet-allocator.js</h1>
                 </header>
                 
 
@@ -105,47 +105,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** @module Shipment */
-
-import validateShipmentOrThrowError from '../helpers/validate-shipment'
-import { v4 as uuid } from 'uuid'
-/**
- * Shipment class to hold shipment information
- */
-class Shipment {
-    /**
-     * @property {string} Shipment Id
-     */
-    id = `${uuid()}`
-    /**
-     * @property {Array&lt;Package>} packages
-     */
-    packages = null
-
-    constructor ({ packages }) {
-      this.packages = packages
-    }
-
-    /**
-     * Get shipmetn weight
-     * @returns {number} Total shipment weight
-     */
-    getWeightkg () {
-      return this.packages?.reduce((acc, item) => acc + item.weightKg, 0)
-    }
-}
+            <pre class="prettyprint source linenums"><code>/** @module Fleet */
+import baseFleetAllocationStrategy from './fleet-allocation-strategy'
 
 /**
- * Factory function to make a new shipment
- * @param {ShipmentOptions} options shipment options
- * @returns {Shipment}
+ * Factory function to make a new Fleet allocator
+ * @param {VehicleOptions} options
+ * @returns {Object} Allocator API
  */
-export function makeShipment ({ packages }) {
-  validateShipmentOrThrowError({ packages })
-  return new Shipment({ packages })
+function makeFleetAllocator ({ maxSpeedKmPerHr, numberOfVehicles }) {
+  /**
+   * Allocate fleet to shipments and estimate time
+   * @param {Array&lt;Shipment>} shipments list of shipments
+   * @param {function} [strategy] override allocation strategy (optional)
+   * @returns {Array&lt;Shipment>} allocated shipments with time estimation
+   */
+  function allocate (shipments, strategy = baseFleetAllocationStrategy) {
+    if (!shipments || !Array.isArray(shipments)) {
+      throw new TypeError('no valid shipments provided to allocate fleet')
+    }
+
+    if (!strategy || typeof strategy !== 'function') {
+      throw new TypeError('no allocation strategy provided to allocate the fleet')
+    }
+    return strategy({ shipments, maxSpeedKmPerHr, numberOfVehicles })
+  }
+
+  return {
+    allocate
+  }
 }
 
-export default Shipment
+export default makeFleetAllocator
 </code></pre>
         </article>
     </section>
