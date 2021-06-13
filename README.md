@@ -7,8 +7,8 @@
 
 Koriko is a small distance courier service app to deliver packages.
 
-Click here for full [API Documentation](https://rahmancam.github.io/koriko/)
-Click here for  [Web App Demo](https://koriko.netlify.app)
+Click here for full <a href="https://rahmancam.github.io/koriko/" target="_blank">API Documentation</a>
+Click here for <a href="https://koriko.netlify.app" target="_blank">Live Demo</a>
 
 ## Project Setup
 
