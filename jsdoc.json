@@ -21,15 +21,44 @@
         "monospaceLinks": true,
         "useLongnameInNav": false,
         "showInheritedInNav": true,
-        "systemName": "Koriko",
-        "footer": "Koriko",
-        "copyright": "@Abdul Rahman"
+        "referenceTitle": "Koriko",
+        "disableSort": false,
+        "collapse": true,
+        "resources": {
+            "google": "https://rahmancam.github.io/koriko/"
+        }
     },
     "opts": {
         "destination": "./docs/",
         "encoding": "utf8",
         "private": true,
         "recurse": true,
-        "template": "./node_modules/minami"
+        "template": "./node_modules/docdash"
+    },
+    "docdash": {
+        "openGraph": {
+            "title": "Korio",
+            "type": "website",
+            "site_name": "Koriko"
+        },
+        "meta": {
+            "title": "Korio",
+            "description": "A courier service library",
+            "keyword": "courier"
+        },
+        "menu": {
+            "Project Website": {
+                "href": "https://github.com/rahmancam/koriko",
+                "target": "_blank",
+                "class": "menu-item",
+                "id": "website_link"
+            },
+            "Live Demo": {
+                "href": "https://koriko.netlify.app",
+                "target": "_blank",
+                "class": "menu-item",
+                "id": "website_link"
+            }
+        }
     }
 }
