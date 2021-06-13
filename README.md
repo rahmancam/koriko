@@ -6,19 +6,95 @@
 
 # Koriko
 
-Koriko is a small distance courier service app to deliver packages.
+Koriko is a courier service library to estimate cost and time to deliver the packages. This library is very customizable, and can add custom estimation pipeline to the existing API.
 
-Click here for full <a href="https://rahmancam.github.io/koriko/" target="_blank">API Documentation</a>
-Click here for <a href="https://koriko.netlify.app" target="_blank">Live Demo</a>
+## How it looks
+
+<img src='./static/img/koriko-web-demo.gif'>
+
+## Getting Started
+
+- Check out the <a href="https://rahmancam.github.io/koriko/" target="_blank">documentation</a>
+- Try the <a href="https://koriko.netlify.app" target="_blank">live demo</a> as mentioned above
+
+## What kind of problems it solves
+
+So if you have a courier service and wants to
+
+* estimate cost of the package along with coupon/offers configuraion
+* estimate delivery time of the package along with cost, coupon/offers and fleet configurations
+
+## Features
+
+* estimateCost API to estimate cost along with coupon configuration.
+* custom estimattor can be added via API (Ex. deduct tax along with totalCost of delivery)
+* estimateTime API to allocate shipping/ and fleet
+* custom package allocation/ maximzation strategy (default maximizeByNumberOfPackages)
+* API can be consumed by any Javascript client/ server (can expose as REST API as well)
 
 ## Project Setup
 
+### Installation
+
+This is a [Node.js](https://nodejs.org/en/) library and application
+
+Before installing, [download and install latest Node.js](https://nodejs.org/en/download/).
+
+Installation is done using the
+[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+
+```bash
+$ npm install
+```
+
+### Console App
+
+To run the console application,
+
+#### Usecase 1 (estimateCost)
+```bash
+$ npm start ./__testinputs__/use_case_1.txt
+```
+<img src='./static/img/usecase_1_console.png'>
+
+#### Usecase 2 (estimateTime)
+```bash
+$ npm start ./__testinputs__/use_case_2.txt
+```
+<img src='./static/img/usecase_2_console.png'>
+
+You can place your input test files in `__testinputs__` directory and run with your filename.
+
+```bash
+$ npm start ./__testinputs__/<file-name>.txt
+```
+
 ## API Usage
 
-### estimate cost
+### estimateCost
 
-### estimate time with cost
+```js
+import { makeDeliveryEstimator } from '../../lib'
 
-## Problem 1
+const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
+const packagesWithCost = estimator.estimateCost(packages)
 
-## Problem 2
+console.table(packagesWithCost)
+
+```
+### estimateTime
+
+```js
+import { makeDeliveryEstimator } from '../../lib'
+
+const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
+const shipments = estimator.estimateTime(packages, fleetDetail)
+
+console.table(packagesWithCost)
+
+```
+## Approach to solve the problem
+* composable functional programming style followed. Ex. customDeductTax(applyCoupon(estimateCost()))
+* 0 / 1 knapsack algorithm is used to solve the maximization problem (with Dynamic programming approach) 
+* custom package allocation/ maximzation strategy is customizable (default maximizeByNumberOfPackages)
+* Priority Queue is implemented for fleet allocation

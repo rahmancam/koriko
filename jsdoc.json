@@ -21,9 +21,14 @@
         "monospaceLinks": true,
         "useLongnameInNav": false,
         "showInheritedInNav": true,
-        "referenceTitle": "Koriko",
-        "disableSort": false,
-        "collapse": true,
+        "search": true,
+        "default": {
+            "staticFiles": {
+              "include": [
+                  "./static"
+              ]
+            }
+        },
         "resources": {
             "google": "https://rahmancam.github.io/koriko/"
         },
