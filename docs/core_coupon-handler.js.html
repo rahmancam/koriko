@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Package - Documentation</title>
+    <title>core/coupon-handler.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,218 +29,122 @@
 
 <div id="main">
     
-    <h1 class="page-title">Package</h1>
+    <h1 class="page-title">core/coupon-handler.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="module-Package-Package.html">Package</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-     
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-<div class="section-method">
-
-    
-
-    <h4 class="name" id=".makePackage"><span class="type-signature">(static) </span>makePackage<span class="signature">(options)</span><span class="type-signature"> &rarr; {<a href="global.html#Package">Package</a>}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Factory function to make new package instance</p>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_package.js.html">models/package.js</a>, <a href="models_package.js.html#line68">line 68</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><code><a href="global.html#PackageOptions">PackageOptions</a></code></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-<dl class="param-type">
-    <dt>
-        Type:
-    </dt>
-    <dd>
-        
-<span class="param-type"><code><a href="global.html#Package">Package</a></code></span>
-
-
-    </dd>
-</dl>
-
-
-    
-</div>
-
-
-
-</div>
-        
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module Coupon */
+
+/**
+ * Apply coupon to package if valid and eligible
+ * @param {Package} packageIem
+ * @param {Array&lt;Coupon>} coupons
+ * @returns {Package} Package with discount
+ */
+export default function applyCoupon (packageIem, coupons) {
+  if (isValidCoupon(packageIem, coupons) &amp;&amp; packageIem.totalCost > 0) {
+    const coupon = findCoupon(packageIem.offerCode, coupons)
+    return _applyOfferToPackage(packageIem, coupon)
+  }
+  return packageIem
+}
+
+/**
+ * Apply offer to the given package
+ * @ignore
+ * @param {Package} packageItem Package to apply offer
+ * @param {Coupon} coupon Coupon
+ * @returns {Package} Package with discount
+ */
+export function _applyOfferToPackage (packageItem, coupon) {
+  const discount = calculateDiscount(packageItem.totalCost, coupon.discountPercentage)
+  return getPackageWithDiscount(packageItem, discount, coupon.discountPercentage)
+}
+
+/**
+ * Calculate discount amount
+ * @param {number} totalCost Total Cost
+ * @param {number} discountPercentage  Discount percentage
+ * @returns {number} Discount amount
+ */
+export function calculateDiscount (totalCost, discountPercentage) {
+  return (totalCost * discountPercentage) / 100
+}
+
+/**
+ * Check if valid coupon
+ * @param {Package} packageItem Package instance
+ * @param {Array&lt;Coupon>} coupons List of coupons
+ * @returns {boolean} coupon valid status
+ */
+export function isValidCoupon (packageItem, coupons) {
+  if (!packageItem || !coupons || !Array.isArray(coupons) || coupons.length === 0) {
+    return false
+  }
+  const coupon = findCoupon(packageItem.offerCode, coupons)
+  return isPackageEligibleForOffer(packageItem, coupon)
+}
+
+/**
+ * Find coupon by offer code
+ * @param {string} offerCode Offer code
+ * @param {Array&lt;Coupon} coupons list of coupons
+ * @returns {Coupon|undefined} Coupon or undefined
+ */
+export function findCoupon (offerCode, coupons) {
+  return coupons.filter(coupon => offerCode === coupon.code &amp;&amp; coupon.discountPercentage > 0)[0]
+}
+
+/**
+ * Is package eligible for offer
+ * @param {Package} packageItem Package instance
+ * @param {Coupon} coupon Coupon
+ * @returns {boolean} eligibility status
+ */
+export function isPackageEligibleForOffer (packageItem, coupon) {
+  if (!packageItem || !coupon) {
+    return false
+  }
+  const { weightKg, distanceKm } = packageItem
+  const { minWeightKg, maxWeightKg, minDistanceKm, maxDistanceKm } = coupon
+  return InRange(distanceKm, minDistanceKm, maxDistanceKm) &amp;&amp;
+        InRange(weightKg, minWeightKg, maxWeightKg)
+}
+/**
+ * Value In Range
+ * @param {number} number value
+ * @param {number} min Min value
+ * @param {number} max Max value
+ * @returns {boolean} status
+ */
+export function InRange (number, min, max) {
+  return (number >= min &amp;&amp; number &lt;= max)
+}
+
+/**
+ * Get Package with discount
+ * @param {Package} packageItem Package instance
+ * @param {number} discount Discount amount
+ * @param {number} discountPercentage  Discount percentage
+ * @returns {Package}
+ */
+export function getPackageWithDiscount (packageItem, discount, discountPercentage) {
+  return {
+    ...packageItem,
+    discountPercentage: discountPercentage,
+    discount,
+    totalCost: packageItem.totalCost - discount
+  }
+}
+</code></pre>
+        </article>
+    </section>
 
 
 
@@ -250,7 +154,7 @@
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 13 2021 11:33:06 GMT+0530 (India Standard Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 13 2021 11:33:05 GMT+0530 (India Standard Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

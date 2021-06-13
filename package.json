@@ -24,6 +24,7 @@
     "jest": "^27.0.4",
     "jsdoc": "^3.6.7",
     "minami": "^1.2.3",
+    "nodemon": "^2.0.7",
     "parcel-bundler": "1.12.3",
     "standard": "^16.0.3"
   },
@@ -33,7 +34,8 @@
     "lint": "eslint lib/**/*.js app/**/*.js",
     "doc": "jsdoc -c jsdoc.json",
     "web:dev": "parcel client/index.html",
-    "web:build": "parcel build client/index.html"
+    "web:build": "parcel build client/index.html",
+    "doc:watch": "nodemon --exec npm run doc --watch lib"
   },
   "standard": {
     "env": [

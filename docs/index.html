@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-package-Package.html">Package</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-package.html">package</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-package.html#.makePackage">makePackage</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Fleet-Fleet.html">Fleet</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Fleet-Vehicle.html">Vehicle</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Package-Package.html">Package</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-Shipment-Shipment.html">Shipment</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Shipment-Shipment.html#getWeightkg">getWeightkg</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Coupon.html">Coupon</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Coupon.html#.calculateDiscount">calculateDiscount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Coupon.html#.findCoupon">findCoupon</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Coupon.html#.getPackageWithDiscount">getPackageWithDiscount</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Coupon.html#.InRange">InRange</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Coupon.html#.isPackageEligibleForOffer">isPackageEligibleForOffer</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Coupon.html#.isValidCoupon">isValidCoupon</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Estimator.html">Estimator</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Estimator.html#.calculateDeliveryCost">calculateDeliveryCost</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Estimator.html#.getPackageWithCost">getPackageWithCost</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Estimator.html#~baseEstimator">baseEstimator</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Estimator.html#~baseEstimatorWithCoupon">baseEstimatorWithCoupon</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Fleet.html">Fleet</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Fleet.html#.makeFleet">makeFleet</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Fleet.html#.makeVehicle">makeVehicle</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Package.html">Package</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Package.html#.makePackage">makePackage</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Shipment.html">Shipment</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Shipment.html#.makeShipment">makeShipment</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
 </nav>
 
 <div id="main">
@@ -48,10 +48,19 @@
 
 
     <section class="readme">
-        <article><p><a href="https://github.com/rahmancam/koriko/actions"><img src="https://img.shields.io/github/workflow/status/rahmancam/koriko/Koriko%20CI?label=tests" alt="CI"></a></p>
-<p><a href="http://standardjs.com"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="js-standard-style"></a></p>
+        <article><p><a href="https://github.com/rahmancam/koriko/actions"><img src="https://img.shields.io/github/workflow/status/rahmancam/koriko/Koriko%20CI?label=tests" alt="CI"></a>
+<a href="http://standardjs.com"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="js-standard-style"></a>
+<a href="https://app.netlify.com/sites/koriko/deploys"><img src="https://api.netlify.com/api/v1/badges/7d060efd-872d-4984-8f41-1f512d325f6b/deploy-status" alt="Netlify Status"></a></p>
 <h1>Koriko</h1>
-<p>Koriko is a small distance courier service app to deliver packages.</p></article>
+<p>Koriko is a small distance courier service app to deliver packages.</p>
+<p>Click here for full <a href="https://rahmancam.github.io/koriko/">API Documentation</a>
+Click here for  <a href="https://koriko.netlify.app">Web App Demo</a></p>
+<h2>Project Setup</h2>
+<h2>API Usage</h2>
+<h3>estimate cost</h3>
+<h3>estimate time with cost</h3>
+<h2>Problem 1</h2>
+<h2>Problem 2</h2></article>
     </section>
 
 
@@ -64,7 +73,7 @@
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sat Jun 12 2021 11:35:39 GMT+0530 (India Standard Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 13 2021 11:33:05 GMT+0530 (India Standard Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
