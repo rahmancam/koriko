@@ -116,7 +116,7 @@ import baseShipmentEstimator from './shipment-estimator'
  * @param {EstimatorOptions} options estimator options
  * @returns {EstimatorAPI} API to estimate cost
  */
-function makeDeliveryEstimator ({ baseCost, coupons, settings }) {
+export function makeDeliveryEstimator ({ baseCost, coupons, settings }) {
   /**
    * Estimate cost
    * @param {Array&lt;Package>} packages packages to estimate
