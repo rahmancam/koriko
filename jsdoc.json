@@ -26,6 +26,23 @@
         "collapse": true,
         "resources": {
             "google": "https://rahmancam.github.io/koriko/"
+        },
+        "better-docs": {
+            "name": "Koriko Documentation",
+            "title": "Koriko Documentation",
+            "hideGenerator": true,
+            "navLinks": [
+                {
+                    "label": "Github Project",
+                    "href": "https://github.com/rahmancam/koriko",
+                    "target": "_blank"
+                },
+                {
+                    "label": "Live Demo",
+                    "href": "https://koriko.netlify.app",
+                    "target": "_blank"
+                }
+            ]
         }
     },
     "opts": {
@@ -33,32 +50,6 @@
         "encoding": "utf8",
         "private": true,
         "recurse": true,
-        "template": "./node_modules/docdash"
-    },
-    "docdash": {
-        "openGraph": {
-            "title": "Korio",
-            "type": "website",
-            "site_name": "Koriko"
-        },
-        "meta": {
-            "title": "Korio",
-            "description": "A courier service library",
-            "keyword": "courier"
-        },
-        "menu": {
-            "Project Website": {
-                "href": "https://github.com/rahmancam/koriko",
-                "target": "_blank",
-                "class": "menu-item",
-                "id": "website_link"
-            },
-            "Live Demo": {
-                "href": "https://koriko.netlify.app",
-                "target": "_blank",
-                "class": "menu-item",
-                "id": "website_link"
-            }
-        }
+        "template": "./node_modules/better-docs"
     }
 }

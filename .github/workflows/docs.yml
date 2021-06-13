@@ -22,7 +22,7 @@ jobs:
         source_dir: ./lib
         output_dir: ./docs
         config_file: jsdoc.json
-        template: docdash
+        template: better-docs
         front_page: README.md
         
     - name: Deploy
