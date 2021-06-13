@@ -84,6 +84,10 @@
             id="sidebarNav"
         >
             
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
             <nav>
                 
                     <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-Coupon.html">Coupon</a></li><li><a href="module-Estimator.html">Estimator</a></li><li><a href="module-Fleet.html">Fleet</a></li><li><a href="module-Package.html">Package</a></li><li><a href="module-Shipment.html">Shipment</a></li></ul><h3>Classes</h3><ul><li><a href="module-Fleet-Fleet.html">Fleet</a></li><li><a href="module-Fleet-FleetPriorityQueue.html">FleetPriorityQueue</a></li><li><a href="module-Fleet-Vehicle.html">Vehicle</a></li><li><a href="module-Package-Package.html">Package</a></li><li><a href="module-Shipment-Shipment.html">Shipment</a></li></ul><h3><a href="global.html">Global</a></h3></div>
@@ -125,15 +129,75 @@
 <a href="https://app.netlify.com/sites/koriko/deploys"><img src="https://api.netlify.com/api/v1/badges/7d060efd-872d-4984-8f41-1f512d325f6b/deploy-status" alt="Netlify Status"></a>
 <a href="https://github.com/rahmancam/koriko/blob/main/LICENSE"><img src="https://img.shields.io/github/license/rahmancam/koriko" alt="license"></a></p>
 <h1>Koriko</h1>
-<p>Koriko is a small distance courier service app to deliver packages.</p>
-<p>Click here for full <a href="https://rahmancam.github.io/koriko/" target="_blank">API Documentation</a>
-Click here for <a href="https://koriko.netlify.app" target="_blank">Live Demo</a></p>
+<p>Koriko is a courier service library to estimate cost and time to deliver the packages. This library is very customizable, and can add custom estimation pipeline to the existing API.</p>
+<h2>How it looks</h2>
+<img src='./static/img/koriko-web-demo.gif'>
+<h2>Getting Started</h2>
+<ul>
+<li>Check out the <a href="https://rahmancam.github.io/koriko/" target="_blank">documentation</a></li>
+<li>Try the <a href="https://koriko.netlify.app" target="_blank">live demo</a> as mentioned above</li>
+</ul>
+<h2>What kind of problems it solves</h2>
+<p>So if you have a courier service and wants to</p>
+<ul>
+<li>estimate cost of the package along with coupon/offers configuraion</li>
+<li>estimate delivery time of the package along with cost, coupon/offers and fleet configurations</li>
+</ul>
+<h2>Features</h2>
+<ul>
+<li>estimateCost API to estimate cost along with coupon configuration.</li>
+<li>custom estimattor can be added via API (Ex. deduct tax along with totalCost of delivery)</li>
+<li>estimateTime API to allocate shipping/ and fleet</li>
+<li>custom package allocation/ maximzation strategy (default maximizeByNumberOfPackages)</li>
+<li>API can be consumed by any Javascript client/ server (can expose as REST API as well)</li>
+</ul>
 <h2>Project Setup</h2>
+<h3>Installation</h3>
+<p>This is a <a href="https://nodejs.org/en/">Node.js</a> library and application</p>
+<p>Before installing, <a href="https://nodejs.org/en/download/">download and install latest Node.js</a>.</p>
+<p>Installation is done using the
+<a href="https://docs.npmjs.com/getting-started/installing-npm-packages-locally"><code>npm install</code> command</a>:</p>
+<pre class="prettyprint source lang-bash"><code>$ npm install
+</code></pre>
+<h3>Console App</h3>
+<p>To run the console application,</p>
+<h4>Usecase 1 (estimateCost)</h4>
+<pre class="prettyprint source lang-bash"><code>$ npm start ./__testinputs__/use_case_1.txt
+</code></pre>
+<img src='./static/img/usecase_1_console.png'>
+<h4>Usecase 2 (estimateTime)</h4>
+<pre class="prettyprint source lang-bash"><code>$ npm start ./__testinputs__/use_case_2.txt
+</code></pre>
+<img src='./static/img/usecase_2_console.png'>
+<p>You can place your input test files in <code>__testinputs__</code> directory and run with your filename.</p>
+<pre class="prettyprint source lang-bash"><code>$ npm start ./__testinputs__/&lt;file-name>.txt
+</code></pre>
 <h2>API Usage</h2>
-<h3>estimate cost</h3>
-<h3>estimate time with cost</h3>
-<h2>Problem 1</h2>
-<h2>Problem 2</h2></article>
+<h3>estimateCost</h3>
+<pre class="prettyprint source lang-js"><code>import { makeDeliveryEstimator } from '../../lib'
+
+const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
+const packagesWithCost = estimator.estimateCost(packages)
+
+console.table(packagesWithCost)
+
+</code></pre>
+<h3>estimateTime</h3>
+<pre class="prettyprint source lang-js"><code>import { makeDeliveryEstimator } from '../../lib'
+
+const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
+const shipments = estimator.estimateTime(packages, fleetDetail)
+
+console.table(packagesWithCost)
+
+</code></pre>
+<h2>Approach to solve the problem</h2>
+<ul>
+<li>composable functional programming style followed. Ex. customDeductTax(applyCoupon(estimateCost()))</li>
+<li>0 / 1 knapsack algorithm is used to solve the maximization problem (with Dynamic programming approach)</li>
+<li>custom package allocation/ maximzation strategy is customizable (default maximizeByNumberOfPackages)</li>
+<li>Priority Queue is implemented for fleet allocation</li>
+</ul></article>
     </section>
 
 
@@ -150,6 +214,8 @@ Click here for <a href="https://koriko.netlify.app" target="_blank">Live Demo</a
 <script src="scripts/app.min.js"></script>
 <script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
 
 </body>
 </html>
