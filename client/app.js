@@ -1,9 +1,11 @@
-import courierDB from '../db'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Home from './pages/home'
 
-console.log(courierDB.findAllCoupons())
+function App () {
+  return (
+    <Home />
+  )
+}
 
-const Hello = () => (<div>This application rocks!!</div>)
-
-ReactDOM.render(<Hello />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

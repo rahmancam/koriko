@@ -1,3 +1,53 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+.form-container {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-group {
+    display: flex;
+    flex-direction: column;
+    padding: 20;
+}
+
+.btn {
+    margin: 5;
+}
+
+.submit-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-message {
+    word-wrap: break-word;
+    max-width: 200px;
+    margin: 5px;
+    padding: 5px;
+    color: orangered;
+    background: whitesmoke;
+}
+
+.results-container {
+    padding: 10;
+}
+
+@media (min-width:480px)  { 
+    .form-group { 
+        flex-direction: row;
+    }
+}
