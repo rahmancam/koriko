@@ -113,12 +113,12 @@
  * @param {Array&lt;Coupon>} coupons
  * @returns {Package} Package with discount
  */
-export default function applyCoupon (packageIem, coupons) {
-  if (isValidCoupon(packageIem, coupons) &amp;&amp; packageIem.totalCost > 0) {
-    const coupon = findCoupon(packageIem.offerCode, coupons)
-    return _applyOfferToPackage(packageIem, coupon)
+export default function applyCoupon (packageItem, coupons) {
+  if (isValidCoupon(packageItem, coupons) &amp;&amp; packageItem.totalCost > 0) {
+    const coupon = findCoupon(packageItem.offerCode, coupons)
+    return _applyOfferToPackage(packageItem, coupon)
   }
-  return packageIem
+  return packageItem
 }
 
 /**
