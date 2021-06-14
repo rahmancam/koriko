@@ -61,6 +61,8 @@ $ npm start ./__testinputs__/use_case_1.txt
 ```bash
 $ npm start ./__testinputs__/use_case_2.txt
 ```
+Output is ordered by deliveryEstimateTimeHrs
+
 <img src='./static/img/usecase_2_console.png'>
 
 You can place your input test files in `__testinputs__` directory and run with your filename.
@@ -68,6 +70,52 @@ You can place your input test files in `__testinputs__` directory and run with y
 ```bash
 $ npm start ./__testinputs__/<file-name>.txt
 ```
+### Test Data Configuration
+
+You can configure coupons and settings via `data/db.json` file.
+
+### Docs Generation
+To generate docs site offline usage run,
+
+```bash
+$ npm run doc
+```
+### Web App
+To develop the web client run,
+
+```bash
+$ npm run web:dev
+```
+To build the web client run, 
+
+```bash
+$ npm run web:build
+```
+### Tests & Coverage
+To run the tests,
+
+```bash
+$ npm run test
+```
+
+For see the coverage,
+
+```bash
+$ npm run test:coverage
+```
+
+### Linting
+For linting run,
+
+```bash
+$ npm run lint
+```
+
+## Approach to solve the problem
+* composable functional programming style followed. Ex. customDeductTax(applyCoupon(estimateCost()))
+* 0 / 1 knapsack algorithm is used to solve the maximization problem (with Dynamic programming approach) 
+* custom package allocation/ maximzation strategy is customizable (default maximizeByNumberOfPackages)
+* Priority Queue is implemented for fleet allocation
 
 ## API Usage
 
@@ -76,7 +124,30 @@ $ npm start ./__testinputs__/<file-name>.txt
 ```js
 import { makeDeliveryEstimator } from '../../lib'
 
+const baseCost = 100
+const packages = [{ 
+                    "id": 'PKG1', 
+                    "weightKg": 5, 
+                    "distanceKm": 5, "offerCode": 'OFR001' 
+                  },
+                  { 
+                    "id": 'PKG2', 
+                    "weightKg": 10, 
+                    "distanceKm": 60
+                  },{"...": "..."}]
+
+const coupons = [{
+            "code": "OFR001",
+            "discountPercentage": 10,
+            "minDistanceKm": 0,
+            "maxDistanceKm": 200,
+            "minWeightKg": 70,
+            "maxWeightKg": 200
+        },
+        {"...": "..."}]
+const settings = { "costPerKg": 10, "costPerKm": 5 }
 const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
+// get package cost estimation with coupons if applicable
 const packagesWithCost = estimator.estimateCost(packages)
 
 console.table(packagesWithCost)
@@ -87,14 +158,178 @@ console.table(packagesWithCost)
 ```js
 import { makeDeliveryEstimator } from '../../lib'
 
+const baseCost = 100
+const packages = [{ 
+                    "id": 'PKG1', 
+                    "weightKg": 5, 
+                    "distanceKm": 5, "offerCode": 'OFR001' 
+                  },
+                  { 
+                    "id": 'PKG2', 
+                    "weightKg": 10, 
+                    "distanceKm": 60
+                  },{"...": "..."}]
+const coupons = [{
+            "code": "OFR001",
+            "discountPercentage": 10,
+            "minDistanceKm": 0,
+            "maxDistanceKm": 200,
+            "minWeightKg": 70,
+            "maxWeightKg": 200
+        },
+        {"...": "..."}]
+const settings = { "costPerKg": 10, "costPerKm": 5 }
+
+const fleetDetail = { numberOfVehicles: 2, maxSpeedKmPerHr: 70, maxLoadKg: 200 }
+
 const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
+// get shipments with allocated packages, along with cost and delivery time estimations
 const shipments = estimator.estimateTime(packages, fleetDetail)
 
-console.table(packagesWithCost)
+console.table(shipments)
+```
+
+## Advanced Customization (Examples)
+
+### Usecase: Addding Tax to estimated Cost
+```js
+....
+....
+import baseEstimatorWithCoupon from './ib/core/cost-estimator-with-coupon'
+
+function estimatorWithTaxDeduction (options) {
+    const packageItem = baseEstimatorWithCoupon(options)
+    return {
+      ...packageItem,
+      totalCost: packageItem.totalCost - packageItem.totalCost * 0.18 // dedcut 18% Tax (use case)
+    }
+}
+
+// get package cost estimation along with coupons if applicable and tax dedction
+const packagesCostWithTax = estimator.estimateCost(packages, estimatorWithTaxDeduction)
 
 ```
-## Approach to solve the problem
-* composable functional programming style followed. Ex. customDeductTax(applyCoupon(estimateCost()))
-* 0 / 1 knapsack algorithm is used to solve the maximization problem (with Dynamic programming approach) 
-* custom package allocation/ maximzation strategy is customizable (default maximizeByNumberOfPackages)
-* Priority Queue is implemented for fleet allocation
+
+### Usecase: Maximize package allocation by deliveryCost
+```js
+....
+....
+let defaultCostStragey; // if not defined, default strategy is used
+let defaultTimeStragey; // if not defined, default strategy is used
+
+function maximizeByTotalCost(packages) {
+  return packages.map(item => item.totalCost)
+}
+
+// get shipments with allocated packages, along with cost and delivery time estimations
+const shipments = estimator.estimateTime(packages, fleetDetail, defaultCostStragey,
+defaultTimeStragey  maximizeByTotalCost)
+
+```
+
+## Input structures
+
+### Package
+```json
+{ 
+    "id": 'PKG1', //string
+    "weightKg": 5, //number
+    "distanceKm": 5, //number
+    "offerCode": 'OFR001' //string (optional)
+}
+```
+### Coupon
+```json
+{
+    "code": "OFR001", // string
+    "discountPercentage": 10, // number
+    "minDistanceKm": 0, // number
+    "maxDistanceKm": 200, // number
+    "minWeightKg": 70, // number
+    "maxWeightKg": 200 // number
+}
+```
+### Settings
+```json
+{ 
+    "costPerKg": 10, //string
+    "costPerKm": 5  // string
+}
+```
+### Fleet
+```json
+{ 
+  "numberOfVehicles": 2, // number
+  "maxSpeedKmPerHr": 70, // number
+  "maxLoadKg": 200 // number
+}
+```
+## Output structures
+
+### Package
+```
+class Package {
+  /**
+   * @property {string} uuid internal unique package Id
+   */
+  uuid = `${uuid()}`
+  /**
+   * @property {string} id Package Id
+   */
+  id = `${uuid()}`;
+  /**
+   * @property {number} weightKg Package Weight in Kg
+   */
+  weightKg = 0;
+  /**
+   * @property {number} distanceKm Package delivery distance in Km
+   */
+  distanceKm = 0;
+  /**
+   * @property {string} offerCode Coupon code
+   */
+  offerCode = '';
+  /**
+   * @property {number} cost Delivery cost
+   */
+  cost = 0;
+  /**
+   * @property {number} discountPercentage Discounted percentage if coupon applied
+   */
+  discountPercentage = 0;
+  /**
+   * @property {number} discount Discount amount
+   */
+  discount = 0;
+  /**
+   * @property {number} totalCost Total cost of delivery
+   */
+  totalCost = 0;
+  /**
+   * @property {number} deliveryEstimateTimeHrs Delivery estimate hours
+   */
+  deliveryEstimateTimeHrs = 0
+  /**
+   * @property {number} actualEstimateHrs Actual estimate hours
+   */
+  actualEstimateHrs = 0
+}
+```
+### Shipment
+```
+class Shipment {
+    /**
+     * @property {string} Shipment Id
+     */
+    id = `${uuid()}`
+    /**
+     * @property {Array<Package>} packages
+     */
+    packages = []
+    /**
+     * Get shipmetn weight
+     * @returns {number} Total shipment weight
+     */
+    getWeightkg ()
+}
+```
