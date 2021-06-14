@@ -168,15 +168,70 @@
 <h4>Usecase 2 (estimateTime)</h4>
 <pre class="prettyprint source lang-bash"><code>$ npm start ./__testinputs__/use_case_2.txt
 </code></pre>
+<p>Output is ordered by deliveryEstimateTimeHrs</p>
 <img src='./static/img/usecase_2_console.png'>
 <p>You can place your input test files in <code>__testinputs__</code> directory and run with your filename.</p>
 <pre class="prettyprint source lang-bash"><code>$ npm start ./__testinputs__/&lt;file-name>.txt
 </code></pre>
+<h3>Test Data Configuration</h3>
+<p>You can configure coupons and settings via <code>data/db.json</code> file.</p>
+<h3>Docs Generation</h3>
+<p>To generate docs site offline usage run,</p>
+<pre class="prettyprint source lang-bash"><code>$ npm run doc
+</code></pre>
+<h3>Web App</h3>
+<p>To develop the web client run,</p>
+<pre class="prettyprint source lang-bash"><code>$ npm run web:dev
+</code></pre>
+<p>To build the web client run,</p>
+<pre class="prettyprint source lang-bash"><code>$ npm run web:build
+</code></pre>
+<h3>Tests &amp; Coverage</h3>
+<p>To run the tests,</p>
+<pre class="prettyprint source lang-bash"><code>$ npm run test
+</code></pre>
+<p>For see the coverage,</p>
+<pre class="prettyprint source lang-bash"><code>$ npm run test:coverage
+</code></pre>
+<h3>Linting</h3>
+<p>For linting run,</p>
+<pre class="prettyprint source lang-bash"><code>$ npm run lint
+</code></pre>
+<h2>Approach to solve the problem</h2>
+<ul>
+<li>composable functional programming style followed. Ex. customDeductTax(applyCoupon(estimateCost()))</li>
+<li>0 / 1 knapsack algorithm is used to solve the maximization problem (with Dynamic programming approach)</li>
+<li>custom package allocation/ maximzation strategy is customizable (default maximizeByNumberOfPackages)</li>
+<li>Priority Queue is implemented for fleet allocation</li>
+</ul>
 <h2>API Usage</h2>
 <h3>estimateCost</h3>
 <pre class="prettyprint source lang-js"><code>import { makeDeliveryEstimator } from '../../lib'
 
+const baseCost = 100
+const packages = [{ 
+                    &quot;id&quot;: 'PKG1', 
+                    &quot;weightKg&quot;: 5, 
+                    &quot;distanceKm&quot;: 5, &quot;offerCode&quot;: 'OFR001' 
+                  },
+                  { 
+                    &quot;id&quot;: 'PKG2', 
+                    &quot;weightKg&quot;: 10, 
+                    &quot;distanceKm&quot;: 60
+                  },{&quot;...&quot;: &quot;...&quot;}]
+
+const coupons = [{
+            &quot;code&quot;: &quot;OFR001&quot;,
+            &quot;discountPercentage&quot;: 10,
+            &quot;minDistanceKm&quot;: 0,
+            &quot;maxDistanceKm&quot;: 200,
+            &quot;minWeightKg&quot;: 70,
+            &quot;maxWeightKg&quot;: 200
+        },
+        {&quot;...&quot;: &quot;...&quot;}]
+const settings = { &quot;costPerKg&quot;: 10, &quot;costPerKm&quot;: 5 }
 const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
+// get package cost estimation with coupons if applicable
 const packagesWithCost = estimator.estimateCost(packages)
 
 console.table(packagesWithCost)
@@ -185,19 +240,167 @@ console.table(packagesWithCost)
 <h3>estimateTime</h3>
 <pre class="prettyprint source lang-js"><code>import { makeDeliveryEstimator } from '../../lib'
 
+const baseCost = 100
+const packages = [{ 
+                    &quot;id&quot;: 'PKG1', 
+                    &quot;weightKg&quot;: 5, 
+                    &quot;distanceKm&quot;: 5, &quot;offerCode&quot;: 'OFR001' 
+                  },
+                  { 
+                    &quot;id&quot;: 'PKG2', 
+                    &quot;weightKg&quot;: 10, 
+                    &quot;distanceKm&quot;: 60
+                  },{&quot;...&quot;: &quot;...&quot;}]
+const coupons = [{
+            &quot;code&quot;: &quot;OFR001&quot;,
+            &quot;discountPercentage&quot;: 10,
+            &quot;minDistanceKm&quot;: 0,
+            &quot;maxDistanceKm&quot;: 200,
+            &quot;minWeightKg&quot;: 70,
+            &quot;maxWeightKg&quot;: 200
+        },
+        {&quot;...&quot;: &quot;...&quot;}]
+const settings = { &quot;costPerKg&quot;: 10, &quot;costPerKm&quot;: 5 }
+
+const fleetDetail = { numberOfVehicles: 2, maxSpeedKmPerHr: 70, maxLoadKg: 200 }
+
 const estimator = makeDeliveryEstimator({ baseCost, coupons, settings })
+// get shipments with allocated packages, along with cost and delivery time estimations
 const shipments = estimator.estimateTime(packages, fleetDetail)
 
-console.table(packagesWithCost)
+console.table(shipments)
+</code></pre>
+<h2>Advanced Customization (Examples)</h2>
+<h3>Usecase: Addding Tax to estimated Cost</h3>
+<pre class="prettyprint source lang-js"><code>....
+....
+import baseEstimatorWithCoupon from './ib/core/cost-estimator-with-coupon'
+
+function estimatorWithTaxDeduction (options) {
+    const packageItem = baseEstimatorWithCoupon(options)
+    return {
+      ...packageItem,
+      totalCost: packageItem.totalCost - packageItem.totalCost * 0.18 // dedcut 18% Tax (use case)
+    }
+}
+
+// get package cost estimation along with coupons if applicable and tax dedction
+const packagesCostWithTax = estimator.estimateCost(packages, estimatorWithTaxDeduction)
 
 </code></pre>
-<h2>Approach to solve the problem</h2>
-<ul>
-<li>composable functional programming style followed. Ex. customDeductTax(applyCoupon(estimateCost()))</li>
-<li>0 / 1 knapsack algorithm is used to solve the maximization problem (with Dynamic programming approach)</li>
-<li>custom package allocation/ maximzation strategy is customizable (default maximizeByNumberOfPackages)</li>
-<li>Priority Queue is implemented for fleet allocation</li>
-</ul></article>
+<h3>Usecase: Maximize package allocation by deliveryCost</h3>
+<pre class="prettyprint source lang-js"><code>....
+....
+let defaultCostStragey; // if not defined, default strategy is used
+let defaultTimeStragey; // if not defined, default strategy is used
+
+function maximizeByTotalCost(packages) {
+  return packages.map(item => item.totalCost)
+}
+
+// get shipments with allocated packages, along with cost and delivery time estimations
+const shipments = estimator.estimateTime(packages, fleetDetail, defaultCostStragey,
+defaultTimeStragey  maximizeByTotalCost)
+
+</code></pre>
+<h2>Input structures</h2>
+<h3>Package</h3>
+<pre class="prettyprint source lang-json"><code>{ 
+    &quot;id&quot;: 'PKG1', //string
+    &quot;weightKg&quot;: 5, //number
+    &quot;distanceKm&quot;: 5, //number
+    &quot;offerCode&quot;: 'OFR001' //string (optional)
+}
+</code></pre>
+<h3>Coupon</h3>
+<pre class="prettyprint source lang-json"><code>{
+    &quot;code&quot;: &quot;OFR001&quot;, // string
+    &quot;discountPercentage&quot;: 10, // number
+    &quot;minDistanceKm&quot;: 0, // number
+    &quot;maxDistanceKm&quot;: 200, // number
+    &quot;minWeightKg&quot;: 70, // number
+    &quot;maxWeightKg&quot;: 200 // number
+}
+</code></pre>
+<h3>Settings</h3>
+<pre class="prettyprint source lang-json"><code>{ 
+    &quot;costPerKg&quot;: 10, //string
+    &quot;costPerKm&quot;: 5  // string
+}
+</code></pre>
+<h3>Fleet</h3>
+<pre class="prettyprint source lang-json"><code>{ 
+  &quot;numberOfVehicles&quot;: 2, // number
+  &quot;maxSpeedKmPerHr&quot;: 70, // number
+  &quot;maxLoadKg&quot;: 200 // number
+}
+</code></pre>
+<h2>Output structures</h2>
+<h3>Package</h3>
+<pre class="prettyprint source"><code>class Package {
+  /**
+   * @property {string} uuid internal unique package Id
+   */
+  uuid = `${uuid()}`
+  /**
+   * @property {string} id Package Id
+   */
+  id = `${uuid()}`;
+  /**
+   * @property {number} weightKg Package Weight in Kg
+   */
+  weightKg = 0;
+  /**
+   * @property {number} distanceKm Package delivery distance in Km
+   */
+  distanceKm = 0;
+  /**
+   * @property {string} offerCode Coupon code
+   */
+  offerCode = '';
+  /**
+   * @property {number} cost Delivery cost
+   */
+  cost = 0;
+  /**
+   * @property {number} discountPercentage Discounted percentage if coupon applied
+   */
+  discountPercentage = 0;
+  /**
+   * @property {number} discount Discount amount
+   */
+  discount = 0;
+  /**
+   * @property {number} totalCost Total cost of delivery
+   */
+  totalCost = 0;
+  /**
+   * @property {number} deliveryEstimateTimeHrs Delivery estimate hours
+   */
+  deliveryEstimateTimeHrs = 0
+  /**
+   * @property {number} actualEstimateHrs Actual estimate hours
+   */
+  actualEstimateHrs = 0
+}
+</code></pre>
+<h3>Shipment</h3>
+<pre class="prettyprint source"><code>class Shipment {
+    /**
+     * @property {string} Shipment Id
+     */
+    id = `${uuid()}`
+    /**
+     * @property {Array&lt;Package>} packages
+     */
+    packages = []
+    /**
+     * Get shipmetn weight
+     * @returns {number} Total shipment weight
+     */
+    getWeightkg ()
+}
+</code></pre></article>
     </section>
 
 
