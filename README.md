@@ -114,7 +114,7 @@ $ npm run lint
 ## Approach to solve the problem
 * composable functional programming style followed. Ex. customDeductTax(applyCoupon(estimateCost()))
 * 0 / 1 knapsack algorithm is used to solve the maximization problem (with Dynamic programming approach) 
-* custom package allocation/ maximzation strategy is customizable (default maximizeByNumberOfPackages)
+* custom package allocation/ maximization strategy is customizable (default maximizeByNumberOfPackages)
 * Priority Queue is implemented for fleet allocation
 
 ## API Usage
